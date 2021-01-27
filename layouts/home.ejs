@@ -1,0 +1,33 @@
+<head>
+	<meta charset="utf-8">
+	<title>act8team ー Home</title>
+
+	<meta name="description" content="Indie game development studio, located somewhere in Russia.">
+	<link rel="stylesheet" type="text/css" href="/styles/public.css">
+	<script type="text/javascript" src="/scripts/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="/scripts/public.js"></script>
+</head>
+
+<body>
+<!--NavBar-->
+<%~ includeFile('/layouts/presets/navbar.ejs'); %>
+<!--Body-->
+<div class="body">
+	<div class="_p"></div>
+	<div class="mainh"><h1>Indie game development studio,</h1>
+	<h1>located somewhere in Russia.</h1>
+	<h2>We make games.</h2></div>
+</div>
+<div class="mt _1block gameholder">
+	<h1>Our Latest Games</h1>
+	<div class="game"></div>
+	<div class="game centerized"></div>
+	<div class="game"></div>
+</div>
+<div class="_2block tpe">
+	<h1 class="head">We make games for</h1>
+	<h2 class="counter" id="YearGameDevCounter">0.0 years</h2>
+</div>
+<!--Footer-->
+<%~ includeFile('/layouts/presets/footer.ejs'); %>
+</body>
