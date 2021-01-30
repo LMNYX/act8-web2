@@ -59,6 +59,20 @@ const Routes =
 			_av = await utils.ProcessAvatar(_res.avatar_url);
 			res.sendFile(_av);
 		}
+	},
+
+	"posterprocessor": async (req, res)=>
+	{
+		res.type("image/jpeg").code(200);
+		req.params.game = parseInt(req.params.game);
+		_res = await utils.GetGame(req.params.game);
+		if(_res == undefined)
+				res.send("");
+		else
+		{
+			_av = await utils.ProcessPoster(_res.poster_logo);
+			res.sendFile(_av);
+		}
 	}
 };
 

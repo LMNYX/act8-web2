@@ -17,7 +17,7 @@
 		<div class="games">
 			<% it.games.forEach(function(game) { %>
 			<div class="game_obj" data-id="<%= game.id %>">
-				<div class="poster" style="--poster-url: url('<%= game.poster_logo %>');"></div>
+				<div class="poster" style="--poster-url: url('/poster/<%= game.id %>');"></div>
 			</div>
 			<% }) %>
 

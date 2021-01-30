@@ -30,6 +30,7 @@ fastify.get('/team', routes.team);
 fastify.get('/games', routes.games);
 
 fastify.get('/avatar/:user', routes.avatarprocessor);
+fastify.get('/poster/:game', routes.posterprocessor);
 
 /* 404 */
 fastify.setNotFoundHandler(routes.error);

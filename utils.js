@@ -85,5 +85,12 @@ Utils.ProcessAvatar = async function (id)
 		else
 			return "/imgs/default/no-avatar.jpg";
 }
+Utils.ProcessPoster = async function (id)
+{
+	if(fs.existsSync(path.join(__dirname, "static", "imgs", "games", id+".jpg")) && fs.existsSync(path.join(__dirname, "static", "imgs", "games", id+"_100.jpg")))
+		return {"full": "/imgs/games/"+id+".jpg", "100px": "/imgs/games/"+id+"_100.jpg"}
+	else
+		return "/imgs/default/no-poster.jpg";
+}
 
 module.exports = Utils;
