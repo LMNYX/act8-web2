@@ -21,7 +21,8 @@
 				<div class="member" data-id="<%= employee.id %>">
 					<table>
 						<% // Implement gradient shading %>
-						<tr class="user-info" style="--user-gradient-one: #ffffff; --user-gradient-two: rgba(0,212,255,1);"><td><img src="/avatar/<%= employee.id %>" class="user-image"></td></tr>
+						<%= JSON.stringify(employee) %>
+						<tr class="user-info" style="--user-gradient-one: <%= employee.gradient_1 %>; --user-gradient-two: <%= employee.gradient_2 %>;"><td><img src="/avatar/<%= employee.id %>" class="user-image"></td></tr>
 						<tr class="details"><td><%= employee.full_name %></td></tr>
 					</table>
 				</div>

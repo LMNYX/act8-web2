@@ -18,20 +18,22 @@ Utils.GetEmployee = async function (id) // get employee out of db by their id
 
 Utils.GetEmployees = async function () // get all employees
 {
-	employee = await client.query("SELECT id, full_name, avatar_url FROM employees;");
+	employee = await client.query("SELECT id, full_name, avatar_url, gradient_1, gradient_2, resigned FROM employees;");
 	return employee.rows;
 }
 
 Utils.GetWorkingEmployees = async function () // get all employees, who's working
 {
-	employee = await client.query("SELECT id, full_name, avatar_url FROM employees WHERE resigned = false;");
-	return employee.rows;
+	employees = await Utils.GetEmployees();
+	employees = employees.filter(employee => !employee.resigned);
+	return employees;
 }
 
 Utils.GetResignedEmployees = async function () // get all employees, who've resigned.
 {
-	employee = await client.query("SELECT id, full_name, avatar_url FROM employees WHERE resigned = true;");
-	return employee.rows;
+	employees = await Utils.GetEmployees();
+	employees = employees.filter(employee => employee.resigned);
+	return employee;
 }
 
 Utils.GetGames = async function () // get all games
