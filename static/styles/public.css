@@ -6,6 +6,11 @@
 
 :root
 {
+	/* warning */
+	--EULA: "What are you exactly trying to find here, huh? I don't mind, but atleast you could've asked, it's rude, you know.";
+	--contact-us: "contact@act8team.com";
+
+	/* actual vars */
 	--brand-white: #F57A7C;
 }
 
@@ -292,24 +297,69 @@ p > a
 	height: 290px;
 	margin: 2px;
 	background: #0E0E0E;
+
+	cursor: pointer;
 }
 
-
-.team>.member>.details
+.team>.member>table, .team>.member>table>tbody
 {
-	display: block;
-	position: absolute;
+	margin: 0;
+	padding: 0;
 	width: 100%;
-	background: #0E0E0E;
-	bottom: 0;
-	left: 0;
-
-	text-transform: uppercase;
-	font-weight: 1000;
-	font-size: 21px;
+	height: 100%;
+	border-collapse: collapse;
+}
+.team>.member>table>tbody>tr
+{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.team>.member>table>tbody>tr.user-info
+{
+	height: 80%;
+	background: linear-gradient(140deg, var(--user-gradient-one) 0%, var(--user-gradient-two) 100%);
+	opacity: 0.8;
+	transition: 0.3s;
 }
 
-.team>.member>.details>._
+.team>.member>table>tbody>tr.user-info>td>img.user-image
 {
-	margin: 12px;
+	border-radius: 1000px;
+
+	width: 96px;
+	height: 96px;
+
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+
+	transition: 0.3s;
+}
+
+.team>.member>table>tbody>tr.details
+{
+	height: 20%;
+	text-align: initial;
+	margin: 40px;
+}
+.team>.member>table>tbody>tr.details>td
+{
+
+	padding: 0 21px;
+	font-size: 1em;
+	font-weight: 1000;
+	text-transform: uppercase;
+}
+.team>.member>table:hover tbody>tr.user-info>td>img.user-image
+{
+	width: 128px;
+	height: 128px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.team>.member>table:hover tbody>tr.user-info
+{
+	opacity: 1;
 }

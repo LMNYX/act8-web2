@@ -1,6 +1,9 @@
 const { Client } = require('pg');
 const config = require(__dirname + '/config.json');
 const client = new Client(config.DB);
+const fs = require('fs');
+const path = require('path');
+const getColors = require('get-image-colors')
 
 client.connect()
 .catch((e)=>{ console.log(e); });
@@ -53,6 +56,24 @@ Utils.GetBlogPost = async function (id) // get blog post by id
 {
 	blogs = await client.query("SELECT * FROM blog_posts WHERE id = $1::integer;", [id]);
 	return blogs.rows[0];
+}
+
+Utils.getGradientOfImageFS = async function (file)
+{
+	_v = await getColors(file, {count: 2});
+	_v = _v.map(color => color.hex());
+	return _v;
+}
+
+Utils.ProcessAvatar = async function (id)
+{
+	if(fs.existsSync(path.join(__dirname, "static", "imgs", "avatars", id+".jpg")) && fs.existsSync(path.join(__dirname, "static", "imgs", "avatars", id+"_100.jpg")))
+		return {"full": "/imgs/avatars/"+id+".jpg", "100px": "/imgs/avatars/"+id+"_100.jpg"}
+	else
+		if(new Date().getDate()+"."+(new Date().getMonth()+1) == "21.6")
+			return "/imgs/default/droid.jpg";
+		else
+			return "/imgs/default/no-avatar.jpg";
 }
 
 module.exports = Utils;

@@ -1,7 +1,10 @@
-$( document ).ready(async ()=>
+$( document ).ready(()=>
 {
 	// home page logo click
 	$("#act8logo").click(async (e)=>{ window.location.href = "/"; });
+
+	$(".member").click(async (e)=> {  window.location.href = "/dev/"+e.currentTarget.getAttribute("data-id"); });
+
 	if(document.getElementById("YearGameDevCounter") != null &&
 		document.getElementById("YearGameDevCounter") != undefined)
 		document.getElementById("YearGameDevCounter").innerText = we_are_in_gamemaking()+" years";

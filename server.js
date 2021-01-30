@@ -4,12 +4,13 @@ const path = require('path');
 
 const routes = require(__dirname + "/routes.js");
 
-/* renderer */
-fastify.register(require('point-of-view'), {
+/* registers */
+fastify.register(require('point-of-view'), { // renderer
   engine: {
     eta: require('eta')
   }
 })
+fastify.register(require('fastify-compress')); // compressor
 
 /* static */
 
@@ -25,6 +26,7 @@ fastify.get('/about', routes.about);
 fastify.get('/legal', routes.legal);
 fastify.get('/support', routes.contact);
 fastify.get('/team', routes.team);
+fastify.get('/avatar/:user', routes.avatarprocessor);
 
 /* 404 */
 fastify.setNotFoundHandler(routes.error);
