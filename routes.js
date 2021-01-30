@@ -43,7 +43,7 @@ const Routes =
 	"games": async (req, res)=>
 	{
 		res.type("text/html").code(200);
-		return res.view(__dirname+"/layouts/games.ejs");
+		return res.view(__dirname+"/layouts/games.ejs", { "games": [] });
 	},
 
 	"avatarprocessor": async (req, res)=>
