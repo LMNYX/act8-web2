@@ -37,9 +37,8 @@ const Routes =
 	"team": async (req, res)=>
 	{
 		res.type("text/html").code(200);
-		_tempEmployees = await utils.GetWorkingEmployees(); // storing current employees
-		_resignedEmployees = await utils.GetResignedEmployees(); // storing resigned employees
-		return res.view(__dirname+"/layouts/team.ejs", {"employees": _tempEmployees, "resigned": _resignedEmployees});
+		employees = await utils.getEmployeeList(); // storing current employees
+		return res.view(__dirname+"/layouts/team.ejs", {"employees": employees['working'], "resigned": employees['resigned']});
 	},
 	"avatarprocessor": async (req, res)=>
 	{

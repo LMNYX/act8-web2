@@ -15,8 +15,10 @@
 <div class="_3block">
 	<div class="inside">
 		<div class="team">
+			<% if (it.employees.length > 0) { %>
 			<h1>Current Team Members</h1>
 			<p>These guys are cool, they work on our projects right now (probably).</p>
+			<% } %>
 			<%  it.employees.forEach(function(employee) { %>
 				<div class="member" data-id="<%= employee.id %>">
 					<table>
@@ -40,7 +42,10 @@
 					</table>
 				</div>
 			<% }) %>
-
+			<% if(it.resigned.length < 1 && it.employees.length < 1) { %>
+			<h1>Oh...</h1>
+			<p>I guess we don't have any employees at the moment or the server is just stupid, try waiting and reloading the page, maybe someone will appear.</p>
+			<% } %>
 		</div>
 	</div>
 </div>

@@ -36,6 +36,14 @@ Utils.GetResignedEmployees = async function () // get all employees, who've resi
 	return employees;
 }
 
+Utils.getEmployeeList = async function()
+{
+	_empReturn = {};
+	_empReturn['working'] = await Utils.GetWorkingEmployees();
+	_empReturn['resigned'] = await Utils.GetResignedEmployees();
+	return _empReturn;
+}
+
 Utils.GetGames = async function () // get all games
 {
 	game = await client.query("SELECT id, name, poster_logo FROM games;");
