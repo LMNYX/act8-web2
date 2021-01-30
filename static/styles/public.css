@@ -155,6 +155,8 @@ body>div.body>div._p
 	vertical-align: middle;
 	margin: 12px 12px;
 	box-shadow: 3px 3px 25px rgba(0,0,0,0.75);
+
+	cursor: pointer;
 }
 
 .gameholder > .game.centerized
