@@ -25,7 +25,10 @@ fastify.get('/', routes.home);
 fastify.get('/about', routes.about);
 fastify.get('/legal', routes.legal);
 fastify.get('/support', routes.contact);
+
 fastify.get('/team', routes.team);
+fastify.get('/games', routes.games);
+
 fastify.get('/avatar/:user', routes.avatarprocessor);
 
 /* 404 */

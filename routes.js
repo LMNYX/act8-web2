@@ -40,6 +40,12 @@ const Routes =
 		employees = await utils.getEmployeeList(); // storing current employees
 		return res.view(__dirname+"/layouts/team.ejs", {"employees": employees['working'], "resigned": employees['resigned']});
 	},
+	"games": async (req, res)=>
+	{
+		res.type("text/html").code(200);
+		return res.view(__dirname+"/layouts/games.ejs");
+	},
+
 	"avatarprocessor": async (req, res)=>
 	{
 		res.type("image/jpeg").code(200);
