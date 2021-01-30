@@ -4,6 +4,7 @@ $( document ).ready(()=>
 	$("#act8logo").click(async (e)=>{ window.location.href = "/"; });
 
 	$(".member").click(async (e)=> {  window.location.href = "/dev/"+e.currentTarget.getAttribute("data-id"); });
+	$(".game_obj").click(async (e)=> { window.location.href = "/game/"+e.currentTarget.getAttribute("data-id"); })
 
 	if(document.getElementById("YearGameDevCounter") != null &&
 		document.getElementById("YearGameDevCounter") != undefined)
