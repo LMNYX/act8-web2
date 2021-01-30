@@ -33,7 +33,7 @@ Utils.GetResignedEmployees = async function () // get all employees, who've resi
 {
 	employees = await Utils.GetEmployees();
 	employees = employees.filter(employee => employee.resigned);
-	return employee;
+	return employees;
 }
 
 Utils.GetGames = async function () // get all games
