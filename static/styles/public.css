@@ -121,6 +121,12 @@ body>div.body>div._p
 	background: #191919;
 	margin: 24px 0;
 }
+.blogblock
+{
+	width: 100%;
+	background: #191919;
+	margin: 12px 0;
+}
 ._3block > div.inside
 {
 	padding: 12px 15%;
