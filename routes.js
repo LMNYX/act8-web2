@@ -50,7 +50,7 @@ const Routes =
 	{
 		res.type("text/html").code(200);
 		_blog = await utils.GetBlog();
-		return res.view(__dirname+"/layouts/games.ejs", { "posts": _blog });
+		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog });
 	},
 
 	"avatarprocessor": async (req, res)=>
