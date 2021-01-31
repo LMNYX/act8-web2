@@ -12,13 +12,17 @@
 <!--NavBar-->
 <%~ includeFile('/layouts/presets/navbar.ejs'); %>
 <!--Body-->
-<div class="inside">
-	<h1>Blog</h1>
-</div>
+<h1 class="pagetitler">Blog</h1>
+<p class="pagetitler nocolor">Currently blog consists of <%= it.posts.length %> post(s).</p>
 <div class="blogblock">
-	<div class="inside">
-		<h1>Blog Post Title</h1>
-		<p>Text preview................</p>
+	<div class="inside blogpost">
+		<table>
+			<tbody>
+				<tr><td class="posttitle">Blog post title</td></tr>
+				<tr><td class="postdesc">Blog post short description.</td></tr>
+				<tr><td class="postfooter">Posted by <button class="blogbutton">Read more</button></td></tr>
+			</tbody>
+		</table>
 	</div>
 </div>
 <%= JSON.stringify(it.posts) %>

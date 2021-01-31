@@ -129,7 +129,14 @@ body>div.body>div._p
 }
 .pagetitler
 {
+	margin: 0;
 	padding: 12px 15%;
+	text-transform: uppercase;
+	color: var(--brand-white);
+}
+.pagetitler.nocolor
+{
+	color: inherit;
 }
 .blogblock > div.inside
 {
@@ -431,4 +438,46 @@ p > a
 .team>.member>table:hover tbody>tr.user-info
 {
 	opacity: 1;
+}
+.blogpost > table, .blogpost > table > tbody
+{
+	width: 100%;
+}
+.blogpost > table > tbody > tr > td.posttitle
+{
+	font-size: 32px;
+	font-weight: 800;
+	text-transform: uppercase;
+	padding-bottom: 12px;
+}
+.blogpost > table > tbody > tr > td.postdesc
+{
+	color: #D8D8D8;
+	padding-bottom: 12px;
+}
+
+.blogpost > table > tbody > tr > td.postfooter
+{
+	float: right;
+}
+.blogpost > table > tbody > tr > td.postfooter > button.blogbutton
+{
+	border: none;
+	background:#101010;
+
+	font-size: 16px;
+	font-weight: 600;
+
+	color: #636363;
+
+	cursor: pointer;
+
+	padding: 12px 24px;
+
+	transition: 0.3s;
+}
+.blogpost > table > tbody > tr > td.postfooter > button.blogbutton:hover
+{
+	background: #636363;
+	color: #101010;
 }

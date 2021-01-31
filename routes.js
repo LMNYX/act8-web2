@@ -50,6 +50,7 @@ const Routes =
 	{
 		res.type("text/html").code(200);
 		_blog = await utils.GetBlog();
+		_blog = await _blog.forEach( async (post) => { post.author_id = await utils.GetEmployee(post.author_id); })
 		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog });
 	},
 
