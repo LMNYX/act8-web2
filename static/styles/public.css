@@ -127,6 +127,15 @@ body>div.body>div._p
 	background: #191919;
 	margin: 12px 0;
 }
+.blogblock > div.inside
+{
+	padding: 12px 15%;
+}
+.blogblock > div.inside > h1
+{
+	font-weight: 800;
+}
+
 ._3block > div.inside
 {
 	padding: 12px 15%;
