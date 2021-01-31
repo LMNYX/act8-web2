@@ -46,6 +46,12 @@ const Routes =
 		_games = await utils.GetGames();
 		return res.view(__dirname+"/layouts/games.ejs", { "games": _games });
 	},
+	"bloglisting": async (req, res)=>
+	{
+		res.type("text/html").code(200);
+		_blog = await utils.GetBlog();
+		return res.view(__dirname+"/layouts/games.ejs", { "posts": _blog });
+	},
 
 	"avatarprocessor": async (req, res)=>
 	{
