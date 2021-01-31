@@ -12,8 +12,14 @@
 <!--NavBar-->
 <%~ includeFile('/layouts/presets/navbar.ejs'); %>
 <!--Body-->
+<div class="inside">
+	<h1>Blog</h1>
+</div>
 <div class="blogblock">
-	<div class="inside">123</div>
+	<div class="inside">
+		<h1>Blog Post Title</h1>
+		<p>Text preview................</p>
+	</div>
 </div>
 <%= JSON.stringify(it.posts) %>
 <!--Footer-->

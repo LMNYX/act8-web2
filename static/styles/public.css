@@ -127,6 +127,10 @@ body>div.body>div._p
 	background: #191919;
 	margin: 12px 0;
 }
+.pagetitler
+{
+	padding: 12px 15%;
+}
 .blogblock > div.inside
 {
 	padding: 12px 15%;
