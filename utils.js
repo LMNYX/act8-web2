@@ -15,6 +15,11 @@ Utils.GetEmployee = async function (id) // get employee out of db by their id
 	employee = await client.query("SELECT * FROM employees WHERE id = $1::integer;", [id]);
 	return employee.rows[0];
 }
+Utils.GetLiteEmployee = async function (id) // get employee out of db by their id
+{
+	employee = await client.query("SELECT id, full_name FROM employees WHERE id = $1::integer;", [id]);
+	return employee.rows[0];
+}
 
 Utils.GetEmployees = async function () // get all employees
 {
@@ -22,16 +27,14 @@ Utils.GetEmployees = async function () // get all employees
 	return employee.rows;
 }
 
-Utils.GetWorkingEmployees = async function () // get all employees, who's working
+Utils.GetWorkingEmployees = async function (employees) // get all employees, who's working
 {
-	employees = await Utils.GetEmployees();
 	employees = employees.filter(employee => !employee.resigned);
 	return employees;
 }
 
-Utils.GetResignedEmployees = async function () // get all employees, who've resigned.
+Utils.GetResignedEmployees = async function (employees) // get all employees, who've resigned.
 {
-	employees = await Utils.GetEmployees();
 	employees = employees.filter(employee => employee.resigned);
 	return employees;
 }
@@ -39,8 +42,9 @@ Utils.GetResignedEmployees = async function () // get all employees, who've resi
 Utils.getEmployeeList = async function()
 {
 	_empReturn = {};
-	_empReturn['working'] = await Utils.GetWorkingEmployees();
-	_empReturn['resigned'] = await Utils.GetResignedEmployees();
+	_employees = await Utils.GetEmployees();
+	_empReturn['working'] = await Utils.GetWorkingEmployees(_employees);
+	_empReturn['resigned'] = await Utils.GetResignedEmployees(_employees);
 	return _empReturn;
 }
 
@@ -56,10 +60,18 @@ Utils.GetGame = async function (id) // get game by its id from db
 	return game.rows[0];
 }
 
+Utils.MapAuthor = async function (blogposts)
+{
+	for (var i = blogposts.length - 1; i >= 0; i--) {
+		blogposts[i]['author'] = await Utils.GetLiteEmployee(blogposts[i]['author_id']);
+	}
+	return blogposts;
+}
+
 Utils.GetBlog = async function () // get full blog
 {
 	blogs = await client.query("SELECT id, title, short_description, author_id, created_at FROM blog_posts;");
-	return blogs.rows;
+	return await Utils.MapAuthor(blogs.rows);
 }
 
 Utils.GetBlogPost = async function (id) // get blog post by id
