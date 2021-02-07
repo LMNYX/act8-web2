@@ -14,19 +14,19 @@
 <!--Body-->
 <h1 class="pagetitler">Blog</h1>
 <p class="pagetitler nocolor">Currently blog consists of <%= it.posts.length %> post(s).</p>
-<div class="blogblock">
 	<% it.posts.forEach( (post) => { %>
-	<div class="inside blogpost">
-		<table>
-			<tbody>
-				<tr><td class="posttitle"><%= post.title %></td></tr>
-				<tr><td class="postdesc"><%= post.short_description %></td></tr>
-				<tr><td class="postfooter"><span class="author_info">Posted by <a href="/dev/<%= post.author.id %>" class="author"><%= post.author.full_name %></a> on <%= new Date(post.created_at).toLocaleDateString() %></span> <button data-id="<%= post.id %>" class="blogbutton">Read more</button></td></tr>
-			</tbody>
-		</table>
+	<div class="blogblock">
+		<div class="inside blogpost">
+			<table>
+				<tbody>
+					<tr><td class="posttitle"><%= post.title %></td></tr>
+					<tr><td class="postdesc"><%= post.short_description %></td></tr>
+					<tr><td class="postfooter"><span class="author_info">Posted by <a href="/dev/<%= post.author.id %>" class="author"><%= post.author.full_name %></a> on <%= new Date(post.created_at).toLocaleDateString() %></span> <button data-id="<%= post.id %>" class="blogbutton">Read more</button></td></tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 	<% }) %>
-</div>
 <!--Footer-->
 <%~ includeFile('/layouts/presets/footer.ejs'); %>
 </body>
