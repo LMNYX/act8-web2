@@ -481,3 +481,20 @@ p > a
 	background: #636363;
 	color: #101010;
 }
+.blogpost > table > tbody > tr > td.postfooter > span.author_info
+{
+	padding: 0 6px;
+}
+.blogpost > table > tbody > tr > td.postfooter > span.author_info > a.author
+{
+	color: var(--brand-white);
+	text-decoration: none;
+	padding: 0 6px;
+	transition: 0.3s;
+}
+.blogpost > table > tbody > tr > td.postfooter > span.author_info > a.author:hover
+{
+
+	box-shadow: inset 0 -40px 0 -1px var(--brand-white);
+	color: white;
+}
