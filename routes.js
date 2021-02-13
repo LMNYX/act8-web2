@@ -78,7 +78,7 @@ const Routes =
 		req.params.game = parseInt(req.params.game);
 		_res = await utils.GetGame(req.params.game);
 		if(_res == undefined)
-				res.send("");
+			res.send("");
 		else
 		{
 			_av = await utils.ProcessPoster(_res.poster_logo);
