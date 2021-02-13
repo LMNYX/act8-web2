@@ -50,10 +50,14 @@ const Routes =
 	{
 		res.type("text/html").code(200);
 		_blog = await utils.GetBlog();
-		// TO-DO: Make blog post contain author name
 		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog });
 	},
-
+	"blogpost": async (req, res)=>
+	{
+		res.type("text/html").code(200);
+		_blog = await utils.GetBlogPost(req.params.post_id);
+		return res.view(__dirname+"/layouts/blogpost.ejs", { "postData": _blog });
+	},
 	"avatarprocessor": async (req, res)=>
 	{
 		res.type("image/jpeg").code(200);

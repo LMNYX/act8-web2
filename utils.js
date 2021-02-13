@@ -4,6 +4,7 @@ const client = new Client(config.DB);
 const fs = require('fs');
 const path = require('path');
 const getColors = require('get-image-colors')
+const md = require('markdown-it')();
 
 client.connect()
 .catch((e)=>{ console.log(e); });
@@ -68,6 +69,18 @@ Utils.MapAuthor = async function (blogposts)
 	return blogposts;
 }
 
+Utils.MapAuthorSingular = async function (blogpost)
+{
+	blogpost['author'] = await Utils.GetLiteEmployee(blogpost['author_id']);
+	return blogpost;
+}
+
+Utils.ParseMarkdown = async function (mkd)
+{
+	return await md.render(mkd);
+}
+
+
 Utils.GetBlog = async function () // get full blog
 {
 	blogs = await client.query("SELECT id, title, short_description, author_id, created_at FROM blog_posts;");
@@ -77,7 +90,7 @@ Utils.GetBlog = async function () // get full blog
 Utils.GetBlogPost = async function (id) // get blog post by id
 {
 	blogs = await client.query("SELECT * FROM blog_posts WHERE id = $1::integer;", [id]);
-	return blogs.rows[0];
+	return await Utils.MapAuthorSingular(blogs.rows[0]);
 }
 
 Utils.getGradientOfImageFS = async function (file)
