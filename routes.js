@@ -61,7 +61,8 @@ const Routes =
 	"devpage": async (req, res)=>
 	{
 		res.type("text/html").code(200);
-		return res.view(__dirname+"/layouts/devpage.ejs", { "devData": {}});
+		_employee = await utils.GetEmployee(req.params.dev_id);
+		return res.view(__dirname+"/layouts/devpage.ejs", { "devData": _employee});
 	},
 
 

@@ -7,12 +7,10 @@
 	<script type="text/javascript" src="/scripts/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="/scripts/public.js"></script>
 </head>
-
 <body>
 <!--NavBar-->
 <%~ includeFile('/layouts/presets/navbar.ejs'); %>
 <!--Body-->
-
 <div class="profile">
     <div class="profile-poster" style="--poster-url: #101010;">
         <div class="profile-avatar">
@@ -21,15 +19,14 @@
     </div>
     <div class="profile-info">
         <div class="profile-dev-data"> 
-            <span class="dev-data dev-name">Placeholder John</span>
-            <span class="dev-data smaller dev-position">UI Designer</span>
+            <span class="dev-data dev-name"><%= it.devData.full_name %></span>
+            <span class="dev-data smaller dev-position"><%= it.devData.position %></span>
         </div>
         <div class="profile-data">
-            <span class="profile-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit tincidunt tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus vel tempus nulla. Vivamus lacus dui, mollis quis luctus ac, rhoncus in sem. Praesent sit amet mattis est, in sollicitudin massa. Maecenas et tempus ex. Donec orci nisl, ultricies eu mollis in, sodales eget turpis. Cras leo felis, viverra ut metus vitae, convallis blandit felis. Sed sollicitudin augue id ex efficitur placerat. Vivamus commodo pulvinar faucibus. Pellentesque bibendum nunc ac ante vehicula ullamcorper. Phasellus ac est tortor. Donec eu sodales mauris. Phasellus at augue mattis, semper risus in, tincidunt ante. Sed ac montes, nascetur ridiculus mus. Aliquam commodo sem a dolor facilisis, et aliquam magna lacinia. </span>
+            <span class="profile-description"><%= it.description == undefined ? "No description provided." : it.devData.description %></span>
         </div>
     </div>
 </div>
-
 <!--Footer-->
 <%~ includeFile('/layouts/presets/footer.ejs'); %>
 </body>
