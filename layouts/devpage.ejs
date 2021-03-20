@@ -12,7 +12,7 @@
 <%~ includeFile('/layouts/presets/navbar.ejs'); %>
 <!--Body-->
 <div class="profile">
-    <div class="profile-poster" style="--poster-url: #101010;">
+    <div class="profile-poster" style="--poster-url: <%= it.devData.background_url == "" ? "#101010" : "url("+it.devData.background_url+");" %>">
         <div class="profile-avatar">
             <img src="<%= it.devData.avatar_url == null ? "/imgs/default/no-avatar.jpg" : it.devData.avatar_url %>">
         </div>
