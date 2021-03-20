@@ -58,6 +58,14 @@ const Routes =
 		_blog = await utils.GetBlogPost(req.params.post_id);
 		return res.view(__dirname+"/layouts/blogpost.ejs", { "postData": _blog });
 	},
+	"devpage": async (req, res)=>
+	{
+		res.type("text/html").code(200);
+		return res.view(__dirname+"/layouts/devpage.ejs", { "devData": {}});
+	},
+
+
+	/* Processors */
 	"avatarprocessor": async (req, res)=>
 	{
 		res.type("image/jpeg").code(200);

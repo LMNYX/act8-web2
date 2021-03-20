@@ -498,3 +498,81 @@ p > a
 	box-shadow: inset 0 -40px 0 -1px var(--brand-white);
 	color: white;
 }
+
+.profile
+{
+	width: 100%;
+}
+
+.profile > .profile-poster
+{
+	position: relative;
+	width: 100%;
+	height: 164px;
+	background: var(--poster-url) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.profile > .profile-poster > .profile-avatar
+{
+	position: absolute;
+	top: 60%;
+	margin-left: 15%;
+}
+.profile > .profile-poster > .profile-avatar > img
+{
+	width: 128px;
+	height: 128px;
+	border-radius: 15px;
+	float: left;
+	vertical-align: middle;
+}
+
+.profile > .profile-info
+{
+	background-color: #191919;
+}
+.profile > .profile-info > .profile-data
+{
+	padding: 12px 15%;
+}
+.profile > .profile-info > .profile-data > .profile-description
+{
+	display: block;
+	font-size: 14px;
+	text-justify: inter-word;
+	text-align: justify;
+}
+
+.profile > .profile-info > .profile-dev-data
+{
+	padding: 4px 24.5%;
+}
+.profile > .profile-info > .profile-dev-data > .dev-data
+{
+	padding-top: 2px;
+	display: block;
+	font-size: 24px;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	color: var(--brand-white);
+}
+.profile > .profile-info > .profile-dev-data > .dev-data.smaller
+{
+	color: #FFF;
+	font-weight: 800;
+	padding-top: 0px;
+	font-size: 20px;
+}
+span.h1
+{
+	display: block;
+	margin: 12px 0;
+	font-size: 26px;
+	text-transform: uppercase;
+	color: var(--brand-white);
+	font-weight: 700;
+}
