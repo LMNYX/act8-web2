@@ -14,7 +14,7 @@
 <div class="profile">
     <div class="profile-poster" style="--poster-url: #101010;">
         <div class="profile-avatar">
-            <img src="http://www.maikelschokkenbroek.nl/marco/img/placeholder-200x200.jpg">
+            <img src="<%= it.devData.avatar_url == null ? "/imgs/default/no-avatar.jpg" : it.devData.avatar_url %>">
         </div>
     </div>
     <div class="profile-info">
