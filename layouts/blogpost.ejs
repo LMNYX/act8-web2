@@ -1,0 +1,28 @@
+<head>
+	<meta charset="utf-8">
+	<title>act8team ー <%= it.postData.title %></title>
+
+	<meta name="description" content="Indie game development studio, located somewhere in Russia.">
+	<link rel="stylesheet" type="text/css" href="/styles/public.css">
+	<script type="text/javascript" src="/scripts/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="/scripts/public.js"></script>
+</head>
+
+<body>
+<!--NavBar-->
+<%~ includeFile('/layouts/presets/navbar.ejs'); %>
+<!--Body-->
+<div class="blogblock">
+	<div class="inside blogpost">
+		<table>
+			<tbody>
+				<tr><td class="posttitle"><%= it.postData.title %></td></tr>
+				<tr><td class="postdesc"><%~ it.postData.markdown %></td></tr>
+				<tr><td class="postfooter"><span class="author_info">Posted by <a href="/dev/<%= it.postData.author_id %>" class="author"><%= it.postData.author.full_name %></a> on <%= new Date(it.postData.created_at).toLocaleDateString() %></span></td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<!--Footer-->
+<%~ includeFile('/layouts/presets/footer.ejs'); %>
+</body>

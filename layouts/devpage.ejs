@@ -1,0 +1,37 @@
+<head>
+	<meta charset="utf-8">
+	<title>act8team ー <%= "Put Developer Name Here" %></title>
+
+	<meta name="description" content="Indie game development studio, located somewhere in Russia.">
+	<link rel="stylesheet" type="text/css" href="/styles/public.css">
+	<script type="text/javascript" src="/scripts/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="/scripts/public.js"></script>
+</head>
+
+<body>
+<!--NavBar-->
+<%~ includeFile('/layouts/presets/navbar.ejs'); %>
+<!--Body-->
+
+<div class="profile">
+    <div class="profile-poster" style="--poster-url: #101010;">
+        <div class="profile-avatar">
+            <img src="http://www.maikelschokkenbroek.nl/marco/img/placeholder-200x200.jpg">
+        </div>
+    </div>
+    <div class="profile-info">
+        <div class="profile-dev-data"> 
+            <span class="dev-data dev-name">Placeholder John</span>
+            <span class="dev-data smaller dev-position">UI Designer</span>
+        </div>
+        <div class="profile-data">
+            <span class="profile-description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla blandit tincidunt tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus vel tempus nulla. Vivamus lacus dui, mollis quis luctus ac, rhoncus in sem. Praesent sit amet mattis est, in sollicitudin massa. Maecenas et tempus ex. Donec orci nisl, ultricies eu mollis in, sodales eget turpis. Cras leo felis, viverra ut metus vitae, convallis blandit felis. Sed sollicitudin augue id ex efficitur placerat. Vivamus commodo pulvinar faucibus. Pellentesque bibendum nunc ac ante vehicula ullamcorper. Phasellus ac est tortor. Donec eu sodales mauris. Phasellus at augue mattis, semper risus in, tincidunt ante. Sed ac montes, nascetur ridiculus mus. Aliquam commodo sem a dolor facilisis, et aliquam magna lacinia. </span>
+            <span class="h1">Social</span>
+            <!-- TO-DO: implement socials -->
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<%~ includeFile('/layouts/presets/footer.ejs'); %>
+</body>
