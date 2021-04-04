@@ -1,3 +1,5 @@
+@import "/3rd/fontawesome/css/all.css";
+
 @font-face
 {
 	font-family: 'Work Sans';
@@ -548,12 +550,24 @@ p > a
 .profile > .profile-info > .profile-data > .profile-links
 {
 	display: block;
-	margin-top: 6px;
+	margin-top: 12px;
 }
 
 .profile > .profile-info > .profile-data > .profile-links > a.profile-link
 {
+	padding: 6px 12px;
 	text-decoration: none;
+
+	transition: 0.2s;
+}
+.profile > .profile-info > .profile-data > .profile-links > a.profile-link:hover
+{
+	background-color: var(--brand-white);
+}
+
+.profile > .profile-info > .profile-data > .profile-links > a.profile-link > i.link-icon
+{
+	font-size: 11px;
 }
 
 .profile > .profile-info > .profile-dev-data
