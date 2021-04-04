@@ -555,7 +555,7 @@ p > a
 
 .profile > .profile-info > .profile-data > .profile-links > a.profile-link
 {
-	padding: 6px 12px;
+	padding: 3px 6px;
 	text-decoration: none;
 
 	transition: 0.2s;
