@@ -11,6 +11,11 @@ client.connect()
 
 var Utils = {};
 
+// Var
+Utils.SocialTypes = {
+	"twitter.com": "Twitter",
+};
+
 Utils.GetEmployee = async function (id) // get employee out of db by their id
 {
 	employee = await client.query("SELECT * FROM employees WHERE id = $1::integer;", [id]);
@@ -93,11 +98,26 @@ Utils.GetBlogPost = async function (id) // get blog post by id
 	return await Utils.MapAuthorSingular(blogs.rows[0]);
 }
 
+/* https://stackoverflow.com/questions/8498592/extract-hostname-name-from-string */
+Utils.getHostnameFromRegex = (url) => {
+	const matches = url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
+	return matches && matches[1];
+  }
+
 Utils.getGradientOfImageFS = async function (file)
 {
 	_v = await getColors(file, {count: 2});
 	_v = _v.map(color => color.hex());
 	return _v;
+}
+
+Utils.getSocialType = function (soc)
+{
+	let _n = Utils.getHostnameFromRegex(soc);
+	if (_n in Utils.SocialTypes)
+		return Utils.SocialTypes[_n];
+	else
+		return _n;
 }
 
 Utils.ProcessAvatar = async function (id)

@@ -24,7 +24,9 @@
         </div>
         <div class="profile-data">
             <span class="profile-description"><%= it.devData.description == "" ? "No description provided." : it.devData.description %></span>
-            <%= it.devData.socials.join(' ') %>
+            <% it.devData.socials.forEach( (e) => { %>
+                <a href="<%= e %>" class="social-link"><%= it.getSocialType(e) %></a>
+            <% }) %>
         </div>
     </div>
 </div>
