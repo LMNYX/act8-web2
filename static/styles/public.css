@@ -545,6 +545,16 @@ p > a
 	text-justify: inter-word;
 	text-align: justify;
 }
+.profile > .profile-info > .profile-data > .profile-links
+{
+	display: block;
+	margin-top: 6px;
+}
+
+.profile > .profile-info > .profile-data > .profile-links > a.profile-link
+{
+	text-decoration: none;
+}
 
 .profile > .profile-info > .profile-dev-data
 {
