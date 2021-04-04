@@ -62,6 +62,8 @@ const Routes =
 	{
 		res.type("text/html").code(200);
 		_employee = await utils.GetEmployee(req.params.dev_id);
+		JSON.parse(JSON.stringify(_employee));
+		console.log(typeof(_employee));
 		return res.view(__dirname+"/layouts/devpage.ejs", { "devData": _employee});
 	},
 
