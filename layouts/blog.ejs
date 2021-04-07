@@ -20,7 +20,7 @@
 			<table>
 				<tbody>
 					<tr><td class="posttitle"><%= post.title %></td></tr>
-					<tr><td class="postdesc"><%= post.short_description %></td></tr>
+					<tr><td class="postdesc"><%~ post.short_description %></td></tr>
 					<tr><td class="postfooter"><span class="author_info">Posted by <a href="/dev/<%= post.author.id %>" class="author"><%= post.author.full_name %></a> on <%= new Date(post.created_at).toLocaleDateString() %></span> <button data-id="<%= post.id %>" class="blogbutton">Read more</button></td></tr>
 				</tbody>
 			</table>
