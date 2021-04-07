@@ -17,7 +17,7 @@
 	<% it.posts.forEach( (post) => { %>
 	<div class="blogblock">
 		<img class="blog-image"
-		src="<%= post.poster == null ? "placeholder_for_null" : post.poster %>">
+		src="<%= post.poster == null ? "/imgs/default/no-blog-poster.jpg" : post.poster %>">
 		<div class="inside blogpost">
 			<table>
 				<tbody>
