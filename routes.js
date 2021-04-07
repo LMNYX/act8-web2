@@ -64,6 +64,11 @@ const Routes =
 		_blog = await utils.GetBlogPost(req.params.post_id);
 		return res.view(__dirname+"/layouts/blogpost.ejs", { "postData": _blog });
 	},
+	"game": async ( req, res ) =>
+	{
+		res.type("text/html").code(200);
+		return res.view(__dirname + "/layouts/game.ejs");
+	},
 	"devpage": async (req, res)=>
 	{
 		res.type("text/html").code(200);

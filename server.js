@@ -32,6 +32,7 @@ fastify.get('/blog', routes.bloglisting);
 fastify.get('/blog/:page_id', routes.bloglisting);
 fastify.get('/blog/post/:post_id', routes.blogpost);
 fastify.get('/dev/:dev_id', routes.devpage);
+fastify.get('/game/:game_id', routes.game);
 
 fastify.get('/avatar/:user', routes.avatarprocessor);
 fastify.get('/poster/:game', routes.posterprocessor);
