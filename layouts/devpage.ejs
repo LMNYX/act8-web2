@@ -18,12 +18,14 @@
         </div>
     </div>
     <div class="profile-info">
-        <div class="profile-dev-data"> 
-            <span class="dev-data dev-name"><%= it.devData.full_name %></span>
-            <span class="dev-data smaller dev-position"><%= it.devData.position %></span>
-        </div>
         <div class="profile-data">
+            <div class="profile-dev-data"> 
+                <span class="dev-data dev-name"><%= it.devData.full_name %></span>
+                <span class="dev-data smaller dev-position"><%= it.devData.position %></span>
+            </div>
+            <span class="profile-space"></span>
             <span class="profile-description"><%~ it.devData.description == "" ? "No description provided." : it.devData.description %></span>
+            <span class="profile-space"></span>
             <span class="profile-links">
                 <% it.devData.socials.forEach( (e) => { %>
                     <a href="<%= e %>" class="profile-link"><i class="fas fa-link link-icon"></i> <%= it.getSocialType(e) %></a>

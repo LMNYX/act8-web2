@@ -538,7 +538,7 @@ p > a
 }
 .profile > .profile-info > .profile-data
 {
-	padding: 12px 15%;
+	padding: 0 15% 12px 15%;
 }
 .profile > .profile-info > .profile-data > .profile-description
 {
@@ -570,11 +570,11 @@ p > a
 	font-size: 11px;
 }
 
-.profile > .profile-info > .profile-dev-data
+.profile > .profile-info > .profile-data > .profile-dev-data
 {
-	padding: 4px 24.5%;
+	padding: 4px 136px;
 }
-.profile > .profile-info > .profile-dev-data > .dev-data
+.profile > .profile-info > .profile-data > .profile-dev-data > .dev-data
 {
 	padding-top: 2px;
 	display: block;
@@ -584,7 +584,12 @@ p > a
 
 	color: var(--brand-white);
 }
-.profile > .profile-info > .profile-dev-data > .dev-data.smaller
+.profile > .profile-info > .profile-data > .profile-space
+{
+	display: block;
+	padding: 12px;
+}
+.profile > .profile-info > .profile-data > .profile-dev-data > .dev-data.smaller
 {
 	color: #FFF;
 	font-weight: 800;
