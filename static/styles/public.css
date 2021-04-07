@@ -636,3 +636,8 @@ span.h1
 	color: var(--brand-white);
 	font-weight: 700;
 }
+.blogs-paginator
+{
+	margin: 12px 15%;
+	float: right;
+}

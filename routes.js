@@ -49,12 +49,13 @@ const Routes =
 	"bloglisting": async (req, res)=>
 	{
 		res.type("text/html").code(200);
-		if(req.params.page_id == undefined)
+		if(req.params.page_id == undefined || req.params.page_id.length < 1)
 			_pageID = 0;
 		else
 			_pageID = req.params.page_id;
 		_blog = await utils.GetBlog(_pageID);
-		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog, "page": _pageID+1 });
+		_blogData = await utils.GetBlogData();
+		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog, "page": parseInt(_pageID)+1, "blogData": _blogData });
 	},
 	"blogpost": async (req, res)=>
 	{

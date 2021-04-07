@@ -85,6 +85,13 @@ Utils.ParseMarkdown = async function (mkd)
 	return await md.render(mkd);
 }
 
+Utils.GetBlogData = async function()
+{
+
+	blogs = await client.query("SELECT COUNT(*) FROM blog_posts;");
+	return {"posts": blogs.rows[0]['count'], "pages_max": Math.floor(blogs.rows[0]["count"]/5), "pages_min": 0};
+
+}
 
 Utils.GetBlog = async function (_pageID) // get full blog
 {
@@ -92,7 +99,6 @@ Utils.GetBlog = async function (_pageID) // get full blog
 		_offset = 0;
 	else
 		_offset = _pageID*5;
-	console.log(_offset);
 	blogs = await client.query("SELECT id, title, short_description, author_id, created_at FROM blog_posts ORDER BY created_at DESC OFFSET "+_offset+" ROWS FETCH NEXT 5 ROWS ONLY;");
 	return await Utils.MapAuthor(blogs.rows);
 }
