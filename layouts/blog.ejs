@@ -27,7 +27,7 @@
 		</div>
 	</div>
 	<% }) %>
-<div class="blogs-paginator"><a href="/blog/<%= it.page < 2 ? 0 : it.page-2  %>">&lt;</a> <%= it.page %> &#47; <%= it.blogData.pages_max+1 %> <a href="/blog/<%= it.page >= it.blogData.pages_max ? it.blogData.pages_max : it.page  %>">&gt;</a></div>
+<div class="blogs-paginator"><a class="paginator-button" href="/blog/<%= it.page < 2 ? 0 : it.page-2  %>">&lt;</a> <%= it.page %> &#47; <%= it.blogData.pages_max+1 %> <a href="/blog/<%= it.page >= it.blogData.pages_max ? it.blogData.pages_max : it.page  %>" class="paginator-button">&gt;</a></div>
 <!--Footer-->
 <%~ includeFile('/layouts/presets/footer.ejs'); %>
 </body>

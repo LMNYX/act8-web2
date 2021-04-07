@@ -641,3 +641,18 @@ span.h1
 	margin: 12px 15%;
 	float: right;
 }
+
+.blogs-paginator > .paginator-button
+{
+	font-weight: 800;
+	text-decoration: none;
+	padding: 12px;
+	background-color: #101010;
+	color: #636363;
+	transition: 0.2s;
+}
+.blogs-paginator > .paginator-button:hover
+{
+	background-color: #636363;
+	color: #101010;
+}
