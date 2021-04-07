@@ -125,9 +125,16 @@ body>div.body>div._p
 }
 .blogblock
 {
+	position: relative;
 	width: 100%;
 	background: #191919;
 	margin: 12px 0;
+
+	transition: 0.2s;
+}
+.blogblock:hover
+{
+	background: #1b1b1b;
 }
 .pagetitler
 {
@@ -330,7 +337,7 @@ p > a
 	background: #0E0E0E;
 	overflow: hidden;
 	cursor: pointer;
-	box-shadow: 0 3px 25px rgba(0,0,0,0.47);
+	box-shadow: 0 3px 10px rgba(0,0,0,0.47);
 
 }
 .games>.game_obj>.poster
@@ -441,6 +448,25 @@ p > a
 {
 	opacity: 1;
 }
+
+.blogpost
+{
+	position: relative;
+	z-index: 0;
+}
+.blogblock > .blog-image
+{
+	position: absolute;
+	height: 100%;
+	padding: 0 15%;
+	mask-image: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+}
+
+.blogblock:hover > .blog-image
+{
+	mask-image: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+}
+
 .blogpost > table, .blogpost > table > tbody
 {
 	width: 100%;

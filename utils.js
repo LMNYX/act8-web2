@@ -99,7 +99,7 @@ Utils.GetBlog = async function (_pageID) // get full blog
 		_offset = 0;
 	else
 		_offset = _pageID*5;
-	blogs = await client.query("SELECT id, title, short_description, author_id, created_at FROM blog_posts ORDER BY created_at DESC OFFSET "+_offset+" ROWS FETCH NEXT 5 ROWS ONLY;");
+	blogs = await client.query("SELECT id, title, short_description, poster, author_id, created_at FROM blog_posts ORDER BY created_at DESC OFFSET "+_offset+" ROWS FETCH NEXT 5 ROWS ONLY;");
 	return await Utils.MapAuthor(blogs.rows);
 }
 

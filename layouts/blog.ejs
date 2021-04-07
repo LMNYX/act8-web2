@@ -16,6 +16,8 @@
 <p class="pagetitler nocolor">You are currently viewing page <%= it.page %> out of <%= it.blogData.pages_max+1 %>.</p>
 	<% it.posts.forEach( (post) => { %>
 	<div class="blogblock">
+		<img class="blog-image"
+		src="<%= post.poster == null ? "placeholder_for_null" : post.poster %>">
 		<div class="inside blogpost">
 			<table>
 				<tbody>

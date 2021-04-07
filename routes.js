@@ -54,6 +54,7 @@ const Routes =
 		else
 			_pageID = req.params.page_id;
 		_blog = await utils.GetBlog(_pageID);
+		console.log(_blog);
 		_blogData = await utils.GetBlogData();
 		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog, "page": parseInt(_pageID)+1, "blogData": _blogData });
 	},
