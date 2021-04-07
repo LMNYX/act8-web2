@@ -49,7 +49,11 @@ const Routes =
 	"bloglisting": async (req, res)=>
 	{
 		res.type("text/html").code(200);
-		_blog = await utils.GetBlog();
+		if(req.params.page_id == undefined)
+			_pageID = 0;
+		else
+			_pageID = req.params.page_id;
+		_blog = await utils.GetBlog(_pageID);
 		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog });
 	},
 	"blogpost": async (req, res)=>

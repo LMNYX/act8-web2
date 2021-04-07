@@ -86,9 +86,14 @@ Utils.ParseMarkdown = async function (mkd)
 }
 
 
-Utils.GetBlog = async function () // get full blog
+Utils.GetBlog = async function (_pageID) // get full blog
 {
-	blogs = await client.query("SELECT id, title, short_description, author_id, created_at FROM blog_posts;");
+	if (_pageID == 0)
+		_offset = 0;
+	else
+		_offset = _pageID*5;
+	console.log(_offset);
+	blogs = await client.query("SELECT id, title, short_description, author_id, created_at FROM blog_posts ORDER BY created_at DESC OFFSET "+_offset+" ROWS FETCH NEXT 5 ROWS ONLY;");
 	return await Utils.MapAuthor(blogs.rows);
 }
 
