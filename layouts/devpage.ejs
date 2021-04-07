@@ -25,7 +25,13 @@
             </div>
             <span class="profile-space"></span>
             <span class="profile-description">
-
+                <% if( it.devData.resigned ) { %>
+                    <div class="profile-resigned">
+                        <table><tr><td class="resigned-icon"><i class="fas fa-exclamation-triangle"></i></td>
+                            <td><span class="resigned-title">Resigned Team Member</span>
+                                <span class="resigned-note">This team member has left our team and now they are not associated with us.</span></td></tr></table>
+                    </div>
+                <% } %>
                 <%~ it.devData.description == "" ? "No description provided." : it.devData.description %>
             </span>
             <span class="profile-space"></span>
