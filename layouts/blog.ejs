@@ -13,7 +13,7 @@
 <%~ includeFile('/layouts/presets/navbar.ejs'); %>
 <!--Body-->
 <h1 class="pagetitler">Blog</h1>
-<p class="pagetitler nocolor">You are currently viewing page <%= it.page %>.</p>
+<p class="pagetitler nocolor">You are currently viewing page <%= it.page %> out of <%= it.blogData.pages_max+1 %>.</p>
 	<% it.posts.forEach( (post) => { %>
 	<div class="blogblock">
 		<div class="inside blogpost">
