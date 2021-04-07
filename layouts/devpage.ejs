@@ -23,7 +23,7 @@
             <span class="dev-data smaller dev-position"><%= it.devData.position %></span>
         </div>
         <div class="profile-data">
-            <span class="profile-description"><%= it.devData.description == "" ? "No description provided." : it.devData.description %></span>
+            <span class="profile-description"><%~ it.devData.description == "" ? "No description provided." : it.devData.description %></span>
             <span class="profile-links">
                 <% it.devData.socials.forEach( (e) => { %>
                     <a href="<%= e %>" class="profile-link"><i class="fas fa-link link-icon"></i> <%= it.getSocialType(e) %></a>
