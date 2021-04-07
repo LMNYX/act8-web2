@@ -54,7 +54,7 @@ const Routes =
 		else
 			_pageID = req.params.page_id;
 		_blog = await utils.GetBlog(_pageID);
-		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog });
+		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog, "page": _pageID+1 });
 	},
 	"blogpost": async (req, res)=>
 	{
