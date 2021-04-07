@@ -547,6 +547,15 @@ p > a
 	text-justify: inter-word;
 	text-align: justify;
 }
+
+.profile > .profile-info > .profile-data > .profile-description > .profile-resigned
+{
+	margin: 0 0 12px 0;
+	padding: 12px;
+	border: 1px solid var(--brand-white);
+	border-radius: 32px;
+}
+
 .profile > .profile-info > .profile-data > .profile-links
 {
 	display: block;
