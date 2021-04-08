@@ -20,7 +20,11 @@ style="--poster-url: url(<%= it.game.background_url == "" ? "/imgs/default/no-ga
 			<p><%= it.game.slogan %></p></td></tr>
 		<tr><td><span>
 			<% if (it.game.button_text != "no-button-display") { %>
-			<a href="<%= it.game.button_url %>" class="game-page game-button"><%= it.game.button_text %></a>
+				<% if (it.game.button_url != "no-button-url") { %>
+					<a href="<%= it.game.button_url %>" class="game-page game-button"><%= it.game.button_text %></a>
+				<% } else { %>
+					<span><%= it.game.button_text %></span>
+				<% } %>
 			<% } %>
 		</span></td></tr>
 	</table>
