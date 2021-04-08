@@ -5,7 +5,8 @@ const Routes =
 	"home": async (req,res)=>
 	{
 		res.type("text/html").code(200);
-		return res.view(__dirname+"/layouts/home.ejs");
+		_latestGames = await utils.getLatestGames();
+		return res.view(__dirname+"/layouts/home.ejs", {"latestGames": _latestGames});
 	},
 
 	/* Static Pages */
@@ -67,7 +68,9 @@ const Routes =
 	"game": async ( req, res ) =>
 	{
 		res.type("text/html").code(200);
-		return res.view(__dirname + "/layouts/game.ejs");
+		_game = await utils.GetGame(req.params.game_id);
+		console.log(_game);
+		return res.view(__dirname + "/layouts/game.ejs", {"game": _game});
 	},
 	"devpage": async (req, res)=>
 	{

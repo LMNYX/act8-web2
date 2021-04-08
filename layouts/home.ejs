@@ -20,9 +20,9 @@
 </div>
 <div class="mt _1block gameholder">
 	<h1>Our Latest Games</h1>
-	<div class="game"></div>
-	<div class="game centerized"></div>
-	<div class="game"></div>
+	<div class="game" data-id="<%= it.latestGames.length > 1 ? it.latestGames[1].id : -1  %>" style="--poster-url: url(<%= it.latestGames.length > 1 ? "/poster/"+it.latestGames[1].id : "/imgs/default/no-poster.jpg"  %>);"></div>
+	<div class="game centerized" data-id="<%= it.latestGames.length > 0 ? it.latestGames[0].id : -1  %>" style="--poster-url: url(<%= it.latestGames.length > 0 ? "/poster/"+it.latestGames[0].id : "/imgs/default/no-poster.jpg"  %>);"></div>
+	<div class="game" data-id="<%= it.latestGames.length > 2 ? it.latestGames[2].id : -1  %>" style="--poster-url: url(<%= it.latestGames.length > 2 ? "/poster/"+it.latestGames[2].id : "/imgs/default/no-poster.jpg"  %>);"></div>
 </div>
 <div class="_2block tpe">
 	<h1 class="head">We make games for</h1>

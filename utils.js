@@ -131,6 +131,14 @@ Utils.getSocialType = function (soc)
 		return _n;
 }
 
+Utils.getLatestGames = async function ()
+{
+
+	_games = await client.query('SELECT id, poster_logo, name FROM games ORDER BY id DESC FETCH NEXT 3 ROWS ONLY');
+	return _games.rows;
+
+}
+
 Utils.ProcessAvatar = async function (id)
 {
 	if(fs.existsSync(path.join(__dirname, "static", "imgs", "avatars", id+".jpg")) && fs.existsSync(path.join(__dirname, "static", "imgs", "avatars", id+"_100.jpg")))

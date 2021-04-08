@@ -4,6 +4,7 @@ $( document ).ready(()=>
 	$("#act8logo").click(async (e)=>{ window.location.href = "/"; });
 
 	$(".member").click(async (e)=> {  window.location.href = "/dev/"+e.currentTarget.getAttribute("data-id"); });
+	$(".game").click(async (e)=> { if(e.currentTarget.getAttribute("data-id") == -1){ return; } window.location.href = "/game/"+e.currentTarget.getAttribute("data-id"); });
 	$(".game_obj").click(async (e)=> { window.location.href = "/game/"+e.currentTarget.getAttribute("data-id"); });
 	$(".blogbutton").click(async (e)=> { window.location.href = "/blog/post/"+e.currentTarget.getAttribute("data-id"); });
 
