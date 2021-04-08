@@ -713,3 +713,26 @@ span.h1
 	height: 100%;
 	padding-left: 15%;
 }
+h1.game-page.game-name
+{
+	font-weight: 1000;
+	font-size: 48px;
+	margin: 0;
+}
+.game-page.game-button
+{
+	background: var(--brand-white);
+	padding: 12px 28px;
+	text-transform: uppercase;
+	font-weight: 600;
+
+	text-decoration: none;
+
+	transition: 0.2s;
+}
+
+.game-page.game-button:hover
+{
+	background: white;
+	color: var(--brand-white);
+}

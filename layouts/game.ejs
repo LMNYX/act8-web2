@@ -13,11 +13,20 @@
 <%~ includeFile('/layouts/presets/navbar.ejs'); %>
 <!--Body-->
 <div class="game-filler"
-style="--poster-url: url(https://psv4.userapi.com/c848036/u176555722/docs/d3/c2819d749673/mixEd_Screenshot_12_8_2018_9_17_59_PM.png?extra=1nE0qSX5tbN-an-ki9QeVdBY6k2SfsTavVDSwcU-dfGoEfJpUPCATeo50vpmhs_ns62yx6u3G2UBU3SetG5TvAPruKX-yuG6Q9mCqgZhp4yPwP3-iyz7wO51SJMmN4hR1UCTgbIK-RRxCxRZvxVr3HI);">
+style="--poster-url: url();">
 <div class="game-filler-darken">
 	<table>
-		<tr><td><h1>Test</h1></td></tr>
+		<tr><td><h1 class="game-page game-name"><%= it.game.name %></h1>
+			<p><%= it.game.slogan %></p></td></tr>
+		<tr><td><span>
+			<% if (it.game.button_text != "no-button-display") { %>
+			<a href="<%= it.game.button_url %>" class="game-page game-button"><%= it.game.button_text %></a>
+			<% } %>
+		</span></td></tr>
 	</table>
+</div>
+<div class="game-page game-screenshots">
+
 </div>
 </div>
 <!--Footer-->
