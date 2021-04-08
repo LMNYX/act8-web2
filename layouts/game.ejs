@@ -13,7 +13,7 @@
 <%~ includeFile('/layouts/presets/navbar.ejs'); %>
 <!--Body-->
 <div class="game-filler"
-style="--poster-url: url();">
+style="--poster-url: url(<%= it.game.background_url == "" ? "/imgs/default/no-game-filler.jpg" : it.game.background_url %>);">
 <div class="game-filler-darken">
 	<table>
 		<tr><td><h1 class="game-page game-name"><%= it.game.name %></h1>
