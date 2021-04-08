@@ -736,3 +736,53 @@ h1.game-page.game-name
 	background: white;
 	color: var(--brand-white);
 }
+.game-page.game-screenshots
+{
+	width: 100%;
+	height: 200px;
+	position: relative;
+	text-align: center;
+}
+.game-page.game-screenshots > table
+{
+	width: 100%;
+	height: 100%;
+}
+.game-page.game-screenshots > table > tbody > tr > td
+{
+	text-align: center;
+}
+.game-page.game-screenshot
+{
+	width: 192px;
+	height: 108px;
+	cursor: pointer;
+}
+.game-screenshot-full
+{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	height: 50%;
+	overflow: auto;
+}
+.full-blackout
+{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.6);
+}
+.close-screenshot
+{
+	position: fixed;
+	right: 32px;
+	top: 24px;
+	font-size: 42px;
+	font-weight: 999;
+	cursor: pointer;
+}

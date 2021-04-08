@@ -100,12 +100,15 @@ const Routes =
 		res.type("image/jpeg").code(200);
 		req.params.game = parseInt(req.params.game);
 		_res = await utils.GetGame(req.params.game);
+		console.log(1);
 		if(_res == undefined)
 			res.send("");
 		else
 		{
+			console.log(1);
 			_av = await utils.ProcessPoster(_res.poster_logo);
-			res.sendFile(_av);
+			console.log(_av);
+			res.sendFile(_av['100px']);
 		}
 	}
 };
