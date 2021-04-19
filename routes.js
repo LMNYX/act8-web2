@@ -108,7 +108,7 @@ const Routes =
 			console.log(1);
 			_av = await utils.ProcessPoster(_res.poster_logo);
 			console.log(_av);
-			res.sendFile(_av['100px']);
+			res.sendFile(_av['100px'] == null ? _av : _av['100px']);
 		}
 	}
 };
