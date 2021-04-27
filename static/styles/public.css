@@ -719,6 +719,27 @@ h1.game-page.game-name
 	font-size: 48px;
 	margin: 0;
 }
+.game-page.game-description
+{
+	width: 100%;
+	background: #191919;
+}
+.game-page.game-description > .game-description-inner
+{
+	padding: 16px 15%;
+}
+.game-page.game-description > .game-description-inner > h1
+{
+	text-transform: uppercase;
+	color: var(--brand-white);
+
+	font-size: 24px;
+}
+.game-page.game-description > .game-description-inner > .game-description-md
+{
+	text-align: justify;
+}
+
 .game-page.game-button
 {
 	background: var(--brand-white);

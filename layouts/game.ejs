@@ -42,6 +42,15 @@ style="--poster-url: url(<%= it.game.background_url === "" ? "/imgs/default/no-g
 		</td></tr>
 	</table>
 </div>
+<div class="game-page game-description">
+	<div class="game-description-inner">
+		<h1>Description</h1>
+		<div class="game-description-md">
+			<%~ it.game.description %>
+		</div>
+	</div>
+</div>
+
 <div class="full-blackout" style="display: none;"></div>
 <div class="close-screenshot" style="display: none;">&times;</div>
 <img class="game-screenshot-full" style="display: none;">
