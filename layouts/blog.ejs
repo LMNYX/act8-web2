@@ -13,7 +13,7 @@
 <%~ includeFile('/layouts/presets/navbar.ejs'); %>
 <!--Body-->
 <h1 class="pagetitler">Blog</h1>
-<p class="pagetitler nocolor"><% if(it.posts.length > 0) { %>You are currently viewing page <%= it.page %> out of <%= it.blogData.pages_max+1 %>.<% } else { %>There is no posts yet.. ;(<% } %></p>
+<p class="pagetitler nocolor"><% if(it.posts.length > 0) { %>You are currently viewing page <%= it.page %> out of <%= it.blogData.pages_max+1 %>.<% } else { %>There are no posts yet.. ;(<% } %></p>
 	<% it.posts.forEach( (post) => { %>
 	<div class="blogblock">
 		<img class="blog-image"
