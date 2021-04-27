@@ -36,6 +36,9 @@ style="--poster-url: url(<%= it.game.background_url === "" ? "/imgs/default/no-g
 			<% it.game.screenshots.forEach((e) => { %>
 				<img class="game-page game-screenshot" src="<%= e %>">
 			<% }) %>
+			<% if ( it.game.screenshots.length < 1 ) { %>
+				<span>No screenshots were added for this game :(</span>
+			<% } %>
 		</td></tr>
 	</table>
 </div>
