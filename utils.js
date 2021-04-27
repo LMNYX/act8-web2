@@ -56,7 +56,7 @@ Utils.getEmployeeList = async function()
 
 Utils.GetGames = async function () // get all games
 {
-	game = await client.query("SELECT id, name, poster_logo FROM games;");
+	game = await client.query("SELECT id, name, poster_logo FROM games ORDER BY id DESC;");
 	return game.rows;
 }
 
