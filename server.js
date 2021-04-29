@@ -1,8 +1,16 @@
 /* imports */
 const fastify = require('fastify')({ logger: true })
 const path = require('path');
-
-const config = require(__dirname + '/config.json');
+const fs = require('fs');
+var config;
+try
+{
+  config = require(__dirname + '/config.json');
+} catch (e)
+{
+  fs.copyFile('default-config.json', 'config.json', ()=>{});
+  config = require(__dirname + '/config.json');
+}
 
 const routes = require(__dirname + "/routes.js");
 
