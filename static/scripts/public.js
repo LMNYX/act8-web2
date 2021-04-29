@@ -20,11 +20,6 @@ $( document ).ready(()=>
 		$("body").css('overflow', 'auto');
 		$(".close-screenshot").css("display", "none");
 	});
-	
-	$(".iagreewithcookiesorijustdontcare").click(async (e) => {
-		//document.getElementsByClassName("cookie-notification").remove();
-		console.log(1);
-	});
 
 	if(document.getElementById("YearGameDevCounter") != null &&
 		document.getElementById("YearGameDevCounter") != undefined)
@@ -42,6 +37,13 @@ function DisplayCookieBox()
 	_cookieBox.className = "cookie-notification";
 	_cookieBox.innerHTML = "<h2>Attention!</h2> <p>This site uses cookies to improve your browsing experience, perform analytics and research, and conduct advertising. By using the website you agree with our privacy policy related to Cookies.</p><button class=\"iagreewithcookiesorijustdontcare\" id=\"iagreewithcookiesorijustdontcare\">Sure</button>";
 	document.body.appendChild(_cookieBox);
+	$("#iagreewithcookiesorijustdontcare").click(async (e) => {
+		document.getElementsByClassName("cookie-notification")[0].remove();
+		if (document.cookie == "")
+			document.cookie = "cookiecare=1; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+		else
+			document.cookie = "cookiecare=1;"+document.cookie;
+	});
 }
 
 function we_are_in_gamemaking()
