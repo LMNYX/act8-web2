@@ -112,7 +112,7 @@ const Routes =
 		}
 	},
 
-	"git-commit-listener": async (req, res)=>
+	"gitCommitListener": async (req, res)=>
 	{
 		res.type("application/json").code(200);
 		await utils.Execute("cd "+__dirname+" && git pull origin indev");
