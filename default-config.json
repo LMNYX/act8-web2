@@ -15,6 +15,7 @@
 
     "env":
     {
-        "development": false
+        "development": false,
+        "service": "act8reborn"
     }
 }

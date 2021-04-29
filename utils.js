@@ -18,6 +18,8 @@ Utils.SocialTypes = {
 	"twitter.com": "Twitter",
 };
 
+Utils.serviceName = config['env']['service'];
+
 Utils.GetEmployee = async function (id) // get employee out of db by their id
 {
 	employee = await client.query("SELECT * FROM employees WHERE id = $1::integer;", [id]);
