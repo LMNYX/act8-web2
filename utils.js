@@ -3,7 +3,9 @@ const config = require(__dirname + '/config.json');
 const client = new Client(config.DB);
 const fs = require('fs');
 const path = require('path');
-const getColors = require('get-image-colors')
+const { exec } = require("child_process");
+const getColors = require('get-image-colors');
+const { stderr } = require('process');
 const md = require('markdown-it')();
 
 client.connect()
@@ -155,6 +157,24 @@ Utils.ProcessPoster = async function (id)
 		return {"full": "/imgs/games/"+id+".jpg", "100px": "/imgs/games/"+id+"_100.jpg"}
 	else
 		return "/imgs/default/no-poster.jpg";
+}
+
+Utils.Execute = async function (shell_command)
+{
+	exec(shell_command, (e, stdout, stderr) =>
+	{
+		if(e)
+		{
+			console.log(e.message);
+			return;
+		}
+		if(stderr)
+		{
+			console.log(stderr);
+			return;
+		}
+		console.log(stdout);
+	});
 }
 
 module.exports = Utils;

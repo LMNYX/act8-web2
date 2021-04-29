@@ -110,6 +110,13 @@ const Routes =
 			console.log(_av);
 			res.sendFile(_av['100px'] == null ? _av : _av['100px']);
 		}
+	},
+
+	"git-commit-listener": async (req, res)=>
+	{
+		res.type("application/json").code(200);
+		await utils.Execute("cd "+__dirname+" && git pull origin indev");
+		res.send("{\"result\": \"ok\"}");
 	}
 };
 
