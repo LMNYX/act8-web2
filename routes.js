@@ -55,7 +55,6 @@ const Routes =
 		else
 			_pageID = req.params.page_id;
 		_blog = await utils.GetBlog(_pageID);
-		console.log(_blog);
 		_blogData = await utils.GetBlogData();
 		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog, "page": parseInt(_pageID)+1, "blogData": _blogData });
 	},
@@ -69,7 +68,6 @@ const Routes =
 	{
 		res.type("text/html").code(200);
 		_game = await utils.GetGame(req.params.game_id);
-		console.log(_game);
 		return res.view(__dirname + "/layouts/game.ejs", {"game": _game});
 	},
 	"devpage": async (req, res)=>
@@ -100,14 +98,11 @@ const Routes =
 		res.type("image/jpeg").code(200);
 		req.params.game = parseInt(req.params.game);
 		_res = await utils.GetGame(req.params.game);
-		console.log(1);
 		if(_res == undefined)
 			res.send("");
 		else
 		{
-			console.log(1);
 			_av = await utils.ProcessPoster(_res.poster_logo);
-			console.log(_av);
 			res.sendFile(_av['100px'] == null ? _av : _av['100px']);
 		}
 	},
