@@ -2,6 +2,8 @@
 const fastify = require('fastify')({ logger: true })
 const path = require('path');
 
+const config = require(__dirname + '/config.json');
+
 const routes = require(__dirname + "/routes.js");
 
 /* registers */
@@ -46,7 +48,7 @@ fastify.setErrorHandler(routes.error);
 
 /* start listening */
 
-fastify.listen(3000, async (err, address) => 
+fastify.listen(config['http']['port'], async (err, address) => 
 {
 	if(err) throw err
 	fastify.log.info(`Listening on ${address}`)
