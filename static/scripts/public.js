@@ -21,6 +21,7 @@ $( document ).ready(()=>
 		$(".close-screenshot").css("display", "none");
 	});
 
+
 	$(".iagreewithcookiesorijustdontcare").click(async (e) => {
 		//document.getElementsByClassName("cookie-notification").remove();
 		console.log(1);
