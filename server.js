@@ -37,6 +37,8 @@ fastify.get('/game/:game_id', routes.game);
 fastify.get('/avatar/:user', routes.avatarprocessor);
 fastify.get('/poster/:game', routes.posterprocessor);
 
+fastify.get('/git-commit-listener', routes.gitCommitListener);
+
 /* 404 */
 fastify.setNotFoundHandler(routes.error);
 fastify.setErrorHandler(routes.error);
