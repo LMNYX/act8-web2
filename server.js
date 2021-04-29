@@ -38,7 +38,7 @@ fastify.get('/avatar/:user', routes.avatarprocessor);
 fastify.get('/poster/:game', routes.posterprocessor);
 
 /* GitHub */
-fastify.get('/git-commit-listener', routes.gitCommitListener);
+fastify.post('/git-commit-listener', routes.gitCommitListener);
 
 /* 404 */
 fastify.setNotFoundHandler(routes.error);
