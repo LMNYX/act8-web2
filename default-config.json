@@ -11,5 +11,10 @@
 	"http":
 	{
 		"port": 3000
-	}
+	},
+
+    "env":
+    {
+        "development": false
+    }
 }
