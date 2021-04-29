@@ -110,7 +110,7 @@ const Routes =
 	"commits": async (req, res) =>
 	{
 		res.type('text/html').code(200);
-		res.send("");
+		res.send("{}");
 	},
 
 	"gitCommitListener": async (req, res)=>
