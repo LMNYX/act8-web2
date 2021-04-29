@@ -20,11 +20,12 @@ $( document ).ready(()=>
 		$("body").css('overflow', 'auto');
 		$(".close-screenshot").css("display", "none");
 	});
-
+	
 	$(".iagreewithcookiesorijustdontcare").click(async (e) => {
 		//document.getElementsByClassName("cookie-notification").remove();
 		console.log(1);
 	});
+	
 	if(document.getElementById("YearGameDevCounter") != null &&
 		document.getElementById("YearGameDevCounter") != undefined)
 		document.getElementById("YearGameDevCounter").innerText = we_are_in_gamemaking()+" years";
