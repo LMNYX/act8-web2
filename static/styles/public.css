@@ -807,3 +807,44 @@ h1.game-page.game-name
 	font-weight: 999;
 	cursor: pointer;
 }
+
+.cookie-notification
+{
+	position: fixed;
+	bottom: 12px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #1a1a1a;
+	padding: 14px 32px;
+}
+.cookie-notification > h2
+{
+	padding: 0; margin: 0;
+	font-weight: 800;
+	color: var(--brand-white);
+	text-transform: uppercase;
+}
+.cookie-notification > p
+{
+	padding: 0; margin: 0;
+}
+.cookie-notification > button#iagreewithcookiesorijustdontcare
+{
+	background: var(--brand-white);
+	color: white;
+	border: none;
+	font-weight: 600;
+	font-size: 18px;
+	padding: 2px 12px;
+	margin-top: 4px;
+	float: right;
+
+	cursor: pointer;
+
+	transition: 0.1s;
+}
+.cookie-notification > button#iagreewithcookiesorijustdontcare:hover
+{
+	color: var(--brand-white);
+	background: white;
+}

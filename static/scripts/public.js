@@ -20,12 +20,28 @@ $( document ).ready(()=>
 		$("body").css('overflow', 'auto');
 		$(".close-screenshot").css("display", "none");
 	});
+
+	$(".iagreewithcookiesorijustdontcare").click(async (e) => {
+		//document.getElementsByClassName("cookie-notification").remove();
+		console.log(1);
+	});
 	if(document.getElementById("YearGameDevCounter") != null &&
 		document.getElementById("YearGameDevCounter") != undefined)
 		document.getElementById("YearGameDevCounter").innerText = we_are_in_gamemaking()+" years";
+
+	let _cookies = Object.fromEntries(document.cookie.split('; ').map(x => x.split(/=(.*)$/,2).map(decodeURIComponent)));
+
+	if (!("cookiecare" in _cookies))
+		DisplayCookieBox();
 });
 
-
+function DisplayCookieBox()
+{
+	let _cookieBox = document.createElement("div");
+	_cookieBox.className = "cookie-notification";
+	_cookieBox.innerHTML = "<h2>Attention!</h2> <p>This site uses cookies to improve your browsing experience, perform analytics and research, and conduct advertising. By using the website you agree with out privacy policy related to Cookies.</p><button class=\"iagreewithcookiesorijustdontcare\" id=\"iagreewithcookiesorijustdontcare\">Sure</button>";
+	document.body.appendChild(_cookieBox);
+}
 
 function we_are_in_gamemaking()
 {
