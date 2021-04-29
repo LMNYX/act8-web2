@@ -116,7 +116,7 @@ const Routes =
 	"gitCommitListener": async (req, res)=>
 	{
 		res.type("application/json").code(200);
-		await utils.Execute("cd "+__dirname+" && git pull origin indev && service "+`${utils.serviceName} restart`);
+		await utils.Execute("cd "+__dirname+" && git reset --hard HEAD && git pull origin indev && service "+`${utils.serviceName} restart`);
 		res.send("{\"result\": \"ok\"}");
 	}
 };
