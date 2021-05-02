@@ -848,3 +848,7 @@ h1.game-page.game-name
 	color: var(--brand-white);
 	background: white;
 }
+.support-mailto
+{
+	color: white;
+}
