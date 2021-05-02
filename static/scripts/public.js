@@ -37,7 +37,7 @@ function DisplayCookieBox()
 {
 	let _cookieBox = document.createElement("div");
 	_cookieBox.className = "cookie-notification";
-	_cookieBox.innerHTML = "<h2>Attention!</h2> <p>This site uses cookies to improve your browsing experience, perform analytics and research, and conduct advertising. By using the website you agree with our privacy policy related to Cookies.</p><button class=\"iagreewithcookiesorijustdontcare\" id=\"iagreewithcookiesorijustdontcare\">Sure</button>";
+	_cookieBox.innerHTML = "<h2>Attention!</h2> <p>This site uses cookies to improve your browsing experience, perform analytics and research. By using the website you agree with our privacy policy related to Cookies.</p><button class=\"iagreewithcookiesorijustdontcare\" id=\"iagreewithcookiesorijustdontcare\">Sure</button>";
 	document.body.appendChild(_cookieBox);
 	$("#iagreewithcookiesorijustdontcare").click(async (e) => {
 		document.getElementsByClassName("cookie-notification")[0].remove();
