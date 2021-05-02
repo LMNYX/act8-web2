@@ -13,12 +13,11 @@
 <%~ includeFile('/layouts/presets/navbar.ejs'); %>
 <!--Body-->
 <div class="body">
-	<div class="_p"></div>
 	<div class="mainh"><h1>Indie game development studio,</h1>
 	<h1>located somewhere in Russia.</h1>
 	<h2>We make games.</h2></div>
 </div>
-<div class="mt _1block gameholder">
+<div class="_1block gameholder">
 	<h1>Our Latest Games</h1>
 	<div class="game" data-id="<%= it.latestGames.length > 1 ? it.latestGames[1].id : -1  %>" style="--poster-url: url(<%= it.latestGames.length > 1 ? "/poster/"+it.latestGames[1].id : "/imgs/default/no-poster.jpg"  %>);"></div>
 	<div class="game centerized" data-id="<%= it.latestGames.length > 0 ? it.latestGames[0].id : -1  %>" style="--poster-url: url(<%= it.latestGames.length > 0 ? "/poster/"+it.latestGames[0].id : "/imgs/default/no-poster.jpg"  %>);"></div>
