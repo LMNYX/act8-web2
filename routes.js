@@ -76,7 +76,12 @@ const Routes =
 		_employee = await utils.GetEmployee(req.params.dev_id);
 		return res.view(__dirname+"/layouts/devpage.ejs", { "devData": _employee, "getSocialType": utils.getSocialType});
 	},
-
+	
+	"commits": async (req, res) =>
+	{
+		res.type('text/html').code(200);
+		return res.view(__dirname + "/layouts/commits.ejs");
+	},
 
 	/* Processors */
 	"avatarprocessor": async (req, res)=>
@@ -105,12 +110,6 @@ const Routes =
 			_av = await utils.ProcessPoster(_res.poster_logo);
 			res.sendFile(_av['100px'] == null ? _av : _av['100px']);
 		}
-	},
-
-	"commits": async (req, res) =>
-	{
-		res.type('text/html').code(200);
-		return res.view(__dirname + "/layouts/commits.ejs");
 	},
 
 	"gitCommitListener": async (req, res)=>
