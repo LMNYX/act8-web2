@@ -118,7 +118,6 @@ const Routes =
 		res.type("application/json").code(200);
 		utils.fs.writeFileSync("test.txt", JSON.stringify(req));
 		await utils.Execute("cd "+__dirname+" && git reset --hard && git pull origin indev && service "+`${utils.serviceName} restart`);
-		
 		res.send("{\"result\": \"ok\"}");
 	}
 };
