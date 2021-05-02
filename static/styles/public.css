@@ -872,3 +872,15 @@ h1.game-page.game-name
 	font-size: 10px;
 	vertical-align: middle;
 }
+.third-party > li
+{
+	list-style-type: none;
+}
+.third-party > li:before
+{
+	content: '❤ ';
+	font-size: 12px;
+	vertical-align: middle;
+	width: 12px;
+	text-align: center;
+}
