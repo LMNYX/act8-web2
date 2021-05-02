@@ -81,6 +81,12 @@ html, body
 	cursor: pointer;
 }
 
+/* to be sure that we don't display unloaded stuff */
+body
+{
+	display: none;
+}
+
 body>div.body
 {
 	margin: 0 15%;
