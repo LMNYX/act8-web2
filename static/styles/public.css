@@ -89,7 +89,14 @@ body
 
 body>div.body
 {
+	display: table;
 	margin: 0 15%;
+	height: 100%;
+}
+.mainh
+{
+	display: table-cell;
+	vertical-align: middle;
 }
 .mainh>h1
 {
