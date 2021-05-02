@@ -854,3 +854,15 @@ h1.game-page.game-name
 {
 	color: white;
 }
+.about-pros > li
+{
+	list-style-type: none;
+	vertical-align: middle;
+}
+.about-pros > li > i.fas
+{
+	width: 12px;
+	text-align: center;
+	font-size: 10px;
+	vertical-align: middle;
+}
