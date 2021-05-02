@@ -115,8 +115,8 @@ const Routes =
 	"gitCommitListener": async (req, res)=>
 	{
 		res.type("application/json").code(200);
-		if ( !("x-github-delivery" in req.headers) )
-			return;
+		/*if ( !("x-github-delivery" in req.headers) )
+			return;*/
 		await utils.Execute("cd "+__dirname+" && git reset --hard && git pull origin indev && service "+`${utils.serviceName} restart`);
 		res.send("{\"result\": \"ok\"}");
 	}
