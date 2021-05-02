@@ -18,6 +18,8 @@ Utils.SocialTypes = {
 	"twitter.com": "Twitter",
 };
 
+Utils.fs = fs;
+
 Utils.serviceName = config['env']['service'];
 
 Utils.GetEmployee = async function (id) // get employee out of db by their id

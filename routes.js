@@ -116,7 +116,7 @@ const Routes =
 	"gitCommitListener": async (req, res)=>
 	{
 		res.type("application/json").code(200);
-		console.log(JSON.stringify(req));
+		utils.fs.writeFileSync("test.txt", JSON.stringify(req));
 		await utils.Execute("cd "+__dirname+" && git reset --hard && git pull origin indev && service "+`${utils.serviceName} restart`);
 		
 		res.send("{\"result\": \"ok\"}");
