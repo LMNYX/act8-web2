@@ -1,5 +1,7 @@
 $( document ).ready(()=>
 {
+	$("body").fadeIn(200, ()=>{});
+
 	// home page logo click
 	$("#act8logo").click(async (e)=>{ window.location.href = "/"; });
 
