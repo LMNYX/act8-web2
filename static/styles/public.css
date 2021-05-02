@@ -91,10 +91,6 @@ body>div.body
 {
 	margin: 0 15%;
 }
-body>div.body>div._p
-{
-	height: 25%;
-}
 .mainh>h1
 {
 	font-weight: 800;
@@ -107,10 +103,7 @@ body>div.body>div._p
 {
 	font-weight: 300;
 }
-.mt
-{
-	margin-top: 30%;
-}
+
 ._1block
 {
 	width: 100%;
@@ -240,12 +233,6 @@ body>div.body>div._p
 	{
 		display: inline-block;
 		float: none;
-	}
-
-	body>div.body>div._p
-
-	{
-		height: 15%;
 	}
 	._1block
 	{
