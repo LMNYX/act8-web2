@@ -885,3 +885,12 @@ h1.game-page.game-name
 	width: 100%;
 	height: 32px;
 }
+
+@media screen and (max-width: 666px)
+{
+	.gameholder > .game:not(.centerized)
+	{
+		width: 219px;
+		height: 350px;
+	}
+}
