@@ -880,3 +880,8 @@ h1.game-page.game-name
 
 	color: #ff7373;
 }
+.paginator-holder
+{
+	width: 100%;
+	height: 32px;
+}
