@@ -51,6 +51,7 @@ fastify.get('/commits', routes.commits);
 
 /* GitHub */
 fastify.post('/git-commit-listener', routes.gitCommitListener);
+fastify.post('/git-commit-accepter', routes.githubCommitAccepter);
 
 /* 404 */
 fastify.setNotFoundHandler(routes.error);
