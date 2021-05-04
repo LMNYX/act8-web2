@@ -126,7 +126,7 @@ const Routes =
 			return;
 		if(req.body.commits.length < 1)
 		{
-			res.send("{\"result\": \"no_commits\"}");
+			res.send("{\"result\": \"denied\"}");
 			return;
 		}
 		_gitData = await utils.BuildGitData(req.body);
