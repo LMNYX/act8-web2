@@ -209,13 +209,12 @@ Utils.BuildCommitString = async function (_commits)
 	{
 		a[i] = p['message'];
 	});
-	console.log(_commits.join("\n"));
-	return;
+	return _commits.join("\n");
 }
 
 Utils.PushCommitDB = async function (_d)
 {
-	game = await client.query("INSERT INTO commits (repository, push_time, changesetId, pusher_email, commit_text) VALUES ($1::text, $2::integer, $3::text, $4::text, $5::text)", [ _d['repo'], _d['pushTime'], _d['changesetId'], _d['pusher']['email'], Utils.BuildCommitString(_d['commits']) ]);
+	_comm = await client.query("INSERT INTO commits (repository, push_time, changesetId, pusher_email, commit_text) VALUES ($1, NOW(), $2, $3, $4)", [ _d['repo'], _d['changesetId'], _d['pusher']['email'], await Utils.BuildCommitString(_d['commits']) ], (e)=>{console.log(e);});
 	return;
 }
 

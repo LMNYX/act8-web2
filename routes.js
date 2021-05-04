@@ -120,6 +120,8 @@ const Routes =
 
 		_gitData = await utils.BuildGitData(req.body);
 
+		await utils.PushCommitDB(_gitData);
+
 		//await utils.Execute("cd "+__dirname+" && git reset --hard && git pull origin indev && service "+`${utils.serviceName} restart`);
 		res.send("{\"result\": \"ok\"}");
 	}
