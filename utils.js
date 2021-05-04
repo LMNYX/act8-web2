@@ -201,4 +201,22 @@ Utils.BuildGitData = async function (_g)
 	};
 }
 
+Utils.BuildCommitString = async function (_commits)
+{
+
+	_commits = Object.values(_commits);
+	await _commits.forEach(async (p, i, a)=>
+	{
+		a[i] = p['message'];
+	});
+	console.log(_commits.join("\n"));
+	return;
+}
+
+Utils.PushCommitDB = async function (_d)
+{
+	game = await client.query("INSERT INTO commits (repository, push_time, changesetId, pusher_email, commit_text) VALUES ($1::text, $2::integer, $3::text, $4::text, $5::text)", [ _d['repo'], _d['pushTime'], _d['changesetId'], _d['pusher']['email'], Utils.BuildCommitString(_d['commits']) ]);
+	return;
+}
+
 module.exports = Utils;
