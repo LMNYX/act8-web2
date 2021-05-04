@@ -17,5 +17,10 @@
     {
         "development": false,
         "service": "act8reborn"
-    }
+    },
+
+	"misc":
+	{
+		"discord_webhook": ""
+	}
 }
