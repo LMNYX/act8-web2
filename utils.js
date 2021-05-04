@@ -181,4 +181,22 @@ Utils.Execute = async function (shell_command)
 	});
 }
 
+Utils.FilterCommits = async function (_raw)
+{
+	await _raw.forEach(async (p, i, a)=>{
+		a[i] = { message: p['message'], timestamp: p['timestamp'] };
+	})
+	return _raw;
+}
+
+Utils.BuildGitData = async function (_g)
+{
+	return {
+		repo: _g['repository']['name'],
+		pushTime: _g['repository']['pushed_at'],
+		pusher: _g['pusher'],
+		commits: await Utils.FilterCommits(_g['commits'])
+	};
+}
+
 module.exports = Utils;
