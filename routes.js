@@ -124,7 +124,11 @@ const Routes =
 		res.type("application/json").code(200);
 		if ( !("x-github-delivery" in req.headers) )
 			return;
-
+		if(req.body.commits.length < 1)
+		{
+			res.send("{\"result\": \"no_commits\"}");
+			return;
+		}
 		_gitData = await utils.BuildGitData(req.body);
 
 		await utils.PushCommitDB(_gitData);
