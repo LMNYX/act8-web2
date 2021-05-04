@@ -6,6 +6,7 @@ const path = require('path');
 const { exec } = require("child_process");
 const getColors = require('get-image-colors');
 const { stderr } = require('process');
+const { commits } = require('./routes');
 const md = require('markdown-it')();
 
 client.connect()
@@ -192,6 +193,7 @@ Utils.FilterCommits = async function (_raw)
 Utils.BuildGitData = async function (_g)
 {
 	return {
+		changesetId: _g['after'].substring(0,6),
 		repo: _g['repository']['name'],
 		pushTime: _g['repository']['pushed_at'],
 		pusher: _g['pusher'],
