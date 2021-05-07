@@ -194,6 +194,7 @@ Utils.BuildGitData = async function (_g)
 {
 	return {
 		changesetId: _g['after'].substring(0,6),
+		branch: _g['ref'].startsWith('refs/heads/') ? _g['ref'].split('/')[2] : "master",
 		repo: _g['repository']['name'],
 		pushTime: _g['repository']['pushed_at'],
 		pusher: _g['pusher'],
