@@ -122,7 +122,7 @@ const Routes =
 	"githubCommitAccepter": async (req, res)=>
 	{
 		res.type("application/json").code(200);
-		if ( !("x-github-delivery" in req.headers) )
+		if ( !("x-github-delivery" in req.headers) ) // non-github data will be declined.
 			return;
 		if(req.body.commits.length < 1)
 		{
