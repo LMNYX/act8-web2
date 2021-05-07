@@ -207,9 +207,7 @@ Utils.BuildCommitString = async function (_commits)
 
 	_commits = Object.values(_commits);
 	await _commits.forEach(async (p, i, a)=>
-	{
-		a[i] = p['message'];
-	});
+	{ a[i] = p['message']; });
 	return _commits.join("\n");
 }
 
