@@ -1,5 +1,6 @@
 const { Client } = require('pg');
-const config = require(__dirname + '/config.json');
+var config = require(__dirname + '/config.json');
+const defaultConfig = require(__dirname + '/default-config.json');
 const client = new Client(config.DB);
 const fs = require('fs');
 const path = require('path');
@@ -8,6 +9,20 @@ const getColors = require('get-image-colors');
 const { stderr } = require('process');
 const { commits } = require('./routes');
 const md = require('markdown-it')();
+
+/*   config update   */
+
+console.log("Checking essential roots of config..");
+for (_rootKey in defaultConfig)
+{
+	if ( !( _rootKey in config ) )
+	{
+		console.warn(`[WARNING] ${_rootKey} is missing in config, but exists in default. Copying to stay up to date...`);
+	}
+}
+console.log("Config check is done!");
+
+/* config update end */
 
 client.connect()
 .catch((e)=>{ console.log(e); });
