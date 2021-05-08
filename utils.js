@@ -20,6 +20,7 @@ for (_rootKey in defaultConfig)
 	if ( !( _rootKey in config ) )
 	{
 		console.warn(`[WARNING] '${_rootKey}' is missing in config, but exists in default. Copying to stay up to date...`);
+		config[_rootKey] = defaultConfig[_rootKey];
 		_configRewriteNeeded = true;
 	}
 }
