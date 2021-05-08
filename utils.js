@@ -17,6 +17,14 @@ var Utils = {};
 // Var
 Utils.SocialTypes = {
 	"twitter.com": "Twitter",
+	"github.com": "GitHub",
+	"vk.com": "VK",
+	"twitch.tv": "Twitch",
+	"youtube.com": "YouTube",
+	"reddit.com": "Reddit",
+	"steamcommunity.com": "Steam",
+
+	"act8team.com": "act8team",
 };
 
 Utils.fs = fs;
