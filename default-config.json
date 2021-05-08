@@ -21,6 +21,6 @@
 
 	"misc":
 	{
-		"cookie_secret": ""
+		"cookie_secret": "thekeyforcookiesiscookiejar"
 	}
 }
