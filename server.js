@@ -1,5 +1,5 @@
 /* imports */
-const fastify = require('fastify')({ logger: true })
+const fastify = require('fastify')({ logger: false })
 const path = require('path');
 const fs = require('fs');
 var config;
