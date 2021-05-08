@@ -12,12 +12,15 @@ const md = require('markdown-it')();
 
 /*   config update   */
 
+var _configRewriteNeeded = false;
+
 console.log("Checking essential roots of config..");
 for (_rootKey in defaultConfig)
 {
 	if ( !( _rootKey in config ) )
 	{
-		console.warn(`[WARNING] ${_rootKey} is missing in config, but exists in default. Copying to stay up to date...`);
+		console.warn(`[WARNING] '${_rootKey}' is missing in config, but exists in default. Copying to stay up to date...`);
+		_configRewriteNeeded = true;
 	}
 }
 console.log("Config check is done!");
