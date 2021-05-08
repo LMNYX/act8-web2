@@ -23,7 +23,22 @@ for (_rootKey in defaultConfig)
 		config[_rootKey] = defaultConfig[_rootKey];
 		_configRewriteNeeded = true;
 	}
+	if(typeof(defaultConfig[_rootKey]) == "object")
+	{
+		for (_inKey in defaultConfig[_rootKey])
+		{
+			if( !( _inKey in config[_rootKey] ) )
+			{
+				console.warn(`[WARNING] '${_inKey}' in '${_rootKey}' is missing in config, but exists in default. Copying to stay up to date...`);
+				config[_rootKey][_inKey] = defaultConfig[_rootKey][_inKey];
+				_configRewriteNeeded = true;
+			}
+		}
+	}
 }
+
+if(_configRewriteNeeded)
+	fs.writeFileSync(__dirname + "/config.json", JSON.stringify(config, null, 2));
 console.log("Config check is done!");
 
 /* config update end */
