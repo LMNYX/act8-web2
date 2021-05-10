@@ -80,7 +80,18 @@ const Routes =
 	"commits": async (req, res) =>
 	{
 		res.type('text/html').code(200);
-		return res.view(__dirname + "/layouts/commits.ejs");
+		if(req.params.page_id == undefined || req.params.page_id.length < 1)
+			_pageID = 0;
+		else
+			_pageID = req.params.page_id;
+		
+		commitsData = await utils.GetCommitsData();
+		
+		return res.view(__dirname + "/layouts/commits.ejs",
+		{ 
+			"commitsData": commitsData,
+			"page": _pageID
+		});
 	},
 
 	/* Processors */

@@ -253,6 +253,15 @@ Utils.BuildCommitString = async function (_commits)
 	return _commits.join("\n");
 }
 
+Utils.GetCommitsData = async function ()
+{
+	_amount = await client.query('SELECT COUNT(*) FROM commits;');
+	return {
+		"amount": parseInt(_amount.rows[0]['count']),
+		"pages_max": Math.floor(parseInt(_amount.rows[0]['count'])/10)+1
+	};
+}
+
 Utils.PushCommitDB = async function (_d)
 {
 	_comm = await client.query("INSERT INTO commits (repository, push_time, changesetId, pusher_email, commit_text, branch) VALUES ($1, NOW(), $2, $3, $4, $5)", [ _d['repo'], _d['changesetId'], _d['pusher']['email'], await Utils.BuildCommitString(_d['commits']), _d['branch'] ]);
