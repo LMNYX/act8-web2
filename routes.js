@@ -96,9 +96,14 @@ const Routes =
 		if(commitsData.pages_max-1 < _pageID)
 			_pageID = commitsData.pages_max - 1;
 		
+		pageData = await utils.getCommits(_pageID);
+
+		console.log(pageData);
+
 		return res.view(__dirname + "/layouts/commits.ejs",
 		{ 
 			"commitsData": commitsData,
+			"pageData": pageData,
 			"page": _pageID
 		});
 	},
