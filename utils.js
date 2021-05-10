@@ -27,7 +27,7 @@ for ( _rootKey in defaultConfig )
 	{
 		for ( _inKey in defaultConfig[_rootKey] )
 		{
-			if( !( _inKey in config[_rootKey] ) )
+			if ( !( _inKey in config[_rootKey] ) )
 			{
 				console.warn(`[WARNING] '${_inKey}' in '${_rootKey}' is missing in config, but exists in default. Copying to stay up to date...`);
 				config[_rootKey][_inKey] = defaultConfig[_rootKey][_inKey];
