@@ -86,6 +86,15 @@ const Routes =
 			_pageID = req.params.page_id;
 		
 		commitsData = await utils.GetCommitsData();
+		if(_pageID < 0)
+		{ //Fucking idiots
+			res.type('you_are_not_supposed_to/be_here/////////get_away/you_are_making-things_way_worse--please_get-lost').code(200);
+			res.header("Hello-Dear", "Hello, fellow network traveller! You're thinking you are very smart by doing this, but we are way smarter :sunglasses:");
+			res.send(`You think you're smart, huh?`);
+			return;
+		}
+		if(commitsData.pages_max-1 < _pageID)
+			_pageID = commitsData.pages_max - 1;
 		
 		return res.view(__dirname + "/layouts/commits.ejs",
 		{ 
