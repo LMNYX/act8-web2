@@ -15,7 +15,7 @@ const md = require('markdown-it')();
 var _configRewriteNeeded = false;
 
 console.log("Checking essential roots of config..");
-for (_rootKey in defaultConfig)
+for ( _rootKey in defaultConfig )
 {
 	if ( !( _rootKey in config ) )
 	{
@@ -23,9 +23,9 @@ for (_rootKey in defaultConfig)
 		config[_rootKey] = defaultConfig[_rootKey];
 		_configRewriteNeeded = true;
 	}
-	if(typeof(defaultConfig[_rootKey]) == "object")
+	if ( typeof(defaultConfig[_rootKey]) == "object" )
 	{
-		for (_inKey in defaultConfig[_rootKey])
+		for ( _inKey in defaultConfig[_rootKey] )
 		{
 			if( !( _inKey in config[_rootKey] ) )
 			{
@@ -37,7 +37,7 @@ for (_rootKey in defaultConfig)
 	}
 }
 
-if(_configRewriteNeeded)
+if ( _configRewriteNeeded )
 	fs.writeFileSync(__dirname + "/config.json", JSON.stringify(config, null, 2));
 console.log("Config check is done!");
 
