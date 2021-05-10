@@ -88,8 +88,6 @@ const Routes =
 		commitsData = await utils.GetCommitsData();
 		if(_pageID < 0)
 		{ //Fucking idiots
-			res.header("Content-Disposition", "attachment");
-			res.header("filename", "FuckYou.txt");
 			res.type('you_are_not_supposed_to/be_here/////////get_away/you_are_making-things_way_worse--please_get-lost').code(200);
 			res.header("Hello-Dear", "Hello, fellow network traveller! You're thinking you are very smart by doing this, but we are way smarter :sunglasses:");
 			res.send(`You think you're smart, huh?`);

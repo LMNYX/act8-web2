@@ -21,6 +21,7 @@ fastify.register(require('point-of-view'), { // renderer
   }
 })
 fastify.register(require('fastify-compress')); // compressor
+fastify.register(require('fastify-multipart'))
 
 /* static */
 
