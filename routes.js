@@ -98,8 +98,6 @@ const Routes =
 		
 		pageData = await utils.getCommits(_pageID);
 
-		console.log(pageData);
-
 		return res.view(__dirname + "/layouts/commits.ejs",
 		{ 
 			"commitsData": commitsData,

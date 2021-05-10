@@ -952,6 +952,23 @@ h1.game-page.game-name
 	height: 32px;
 }
 
+.commit-holder
+{
+	width: 100%;
+}
+
+.commit-holder > .commit
+{
+	background: #191919;
+	margin: 4px 15%;
+	position: relative;
+}
+.commit-holder > .commit > .inside-commit
+{
+	padding: 12px 24px;
+	word-wrap: break-word;
+}
+
 @media screen and (max-width: 666px)
 {
 	.gameholder > .game:not(.centerized)

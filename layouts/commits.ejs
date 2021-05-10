@@ -14,7 +14,14 @@
 <!--Body-->
 <h1 class="pagetitler">Commits</h1>
 <p class="pagetitler nocolor">There is <%= it.commitsData.amount %> public commit(s).</p>
-
+<div class="commit-holder">
+<% it.pageData.forEach((commit)=>{ %>
+		<div class="commit">
+			<div class="inside-commit"><%=JSON.stringify(commit)%></div>
+		</div>
+<% }) %>
+</div>
+<br>
 <div class="paginator-holder"><div class="blogs-paginator"><a class="paginator-button" href="/commits/<%= parseInt(it.page) == 0 ? 0 : parseInt(it.page)-1 %>">&lt;</a> <%= parseInt(it.page)+1 %> &#47; <%= it.commitsData.pages_max %> <a href="/commits/<%= it.page >= it.commitsData.pages_max-1 ? it.page : parseInt(it.page)+1 %>" class="paginator-button">&gt;</a></div></div>
 <!--Footer-->
 <%~ includeFile('/layouts/presets/footer.ejs'); %>
