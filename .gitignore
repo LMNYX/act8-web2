@@ -117,3 +117,7 @@ dist
 static/imgs/games/
 
 package-lock.json
+
+/static/scripts/*.min.js
+
+/static/styles/*.min.css

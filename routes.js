@@ -1,5 +1,7 @@
 const utils = require(__dirname + "/utils.js");
 
+utils.GenerateMinification();
+
 const Routes =
 {	
 	"home": async (req,res)=>

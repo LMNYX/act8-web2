@@ -8,6 +8,9 @@ const { exec } = require("child_process");
 const getColors = require('get-image-colors');
 const { stderr } = require('process');
 const md = require('markdown-it')();
+// minification
+const minify = require('@node-minify/core');
+const uglifyjs = require('@node-minify/uglify-es');
 
 /*   config update   */
 
@@ -62,11 +65,46 @@ Utils.SocialTypes = {
 
 Utils.fs = fs;
 
+const ToMinify = [
+	`${__dirname}/static/scripts/public.js`
+];
+// Will be used to generate ${_fileName}+.min.+{_ext}
+
 Utils.serviceName = config['env']['service'];
+
+Utils.GetFileExt = function (fileName)
+{
+	_fileName = fileName.split('.');
+	return { "name": _fileName[0], "ext": _fileName[_fileName.length-1] };
+}
+
+Utils.GenerateMinifiedName = function (fileName)
+{
+	_sep = Utils.GetFileExt(fileName);
+	return `${_sep.name}.min.${ _sep.ext}`;
+}
 
 Utils.GenerateMinification = function ()
 {
-	console.log("Test");
+	ToMinify.forEach((_file)=>
+	{
+		_fileData = this.GetFileExt(_file);
+		_minName = this.GenerateMinifiedName(_file);
+		switch(_fileData.ext)
+		{
+			case "js":
+				minify({
+					compressor: uglifyjs,
+					input: _file,
+					output: _minName,
+					callback: function (e, m){}
+				});
+				break;
+			default:
+				console.warn(`Impossible task: ${_file} can't be minified (unknown ext)`);
+				break;
+		}
+	});
 	return;
 }
 

@@ -4,6 +4,8 @@
   "main": "server.js",
   "license": "MIT",
   "dependencies": {
+    "@node-minify/core": "^6.2.0",
+    "@node-minify/uglify-es": "^6.2.0",
     "eta": "^1.12.1",
     "fastify": "^3.9.2",
     "fastify-compress": "^3.4.1",
@@ -12,7 +14,6 @@
     "fastify-static": "^3.3.1",
     "get-image-colors": "^4.0.0",
     "markdown-it": "^12.0.4",
-    "minify": "^7.0.2",
     "pg": "^8.5.1",
     "point-of-view": "^4.8.0"
   }
