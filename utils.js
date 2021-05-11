@@ -7,7 +7,6 @@ const path = require('path');
 const { exec } = require("child_process");
 const getColors = require('get-image-colors');
 const { stderr } = require('process');
-const { commits } = require('./routes');
 const md = require('markdown-it')();
 
 /*   config update   */
@@ -67,6 +66,7 @@ Utils.serviceName = config['env']['service'];
 
 Utils.GenerateMinification = function ()
 {
+	console.log("Test");
 	return;
 }
 
