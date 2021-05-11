@@ -27,7 +27,9 @@
 		</div>
 	</div>
 	<% }) %>
-<div class="paginator-holder"><div class="blogs-paginator"><a class="paginator-button" href="/blog/<%= it.page < 2 ? 0 : it.page-2  %>">&lt;</a> <%= it.page %> &#47; <%= it.blogData.pages_max+1 %> <a href="/blog/<%= it.page >= it.blogData.pages_max ? it.blogData.pages_max : it.page  %>" class="paginator-button">&gt;</a></div></div>
+<% if ( it.posts.length > 0 ) { %>
+	<div class="paginator-holder"><div class="blogs-paginator"><a class="paginator-button" href="/blog/<%= it.page < 2 ? 0 : it.page-2  %>">&lt;</a> <%= it.page %> &#47; <%= it.blogData.pages_max+1 %> <a href="/blog/<%= it.page >= it.blogData.pages_max ? it.blogData.pages_max : it.page  %>" class="paginator-button">&gt;</a></div></div>
+<% } %>
 <!--Footer-->
 <%~ includeFile('/layouts/presets/footer.ejs'); %>
 </body>
