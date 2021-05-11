@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@node-minify/core": "^6.2.0",
+    "@node-minify/cssnano": "^6.2.0",
     "@node-minify/uglify-es": "^6.2.0",
     "eta": "^1.12.1",
     "fastify": "^3.9.2",
