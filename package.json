@@ -12,6 +12,7 @@
     "fastify-static": "^3.3.1",
     "get-image-colors": "^4.0.0",
     "markdown-it": "^12.0.4",
+    "minify": "^7.0.2",
     "pg": "^8.5.1",
     "point-of-view": "^4.8.0"
   }
