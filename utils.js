@@ -11,6 +11,7 @@ const md = require('markdown-it')();
 // minification
 const minify = require('@node-minify/core');
 const uglifyjs = require('@node-minify/uglify-es');
+const cssnano = require('@node-minify/cssnano');
 
 /*   config update   */
 
@@ -66,7 +67,11 @@ Utils.SocialTypes = {
 Utils.fs = fs;
 
 const ToMinify = [
-	`${__dirname}/static/scripts/public.js`
+	// + Scripts
+	`${__dirname}/static/scripts/public.js`,
+
+	// + Styles
+	`${__dirname}/static/styles/public.css`
 ];
 // Will be used to generate ${_fileName}+.min.+{_ext}
 
@@ -95,6 +100,14 @@ Utils.GenerateMinification = function ()
 			case "js":
 				minify({
 					compressor: uglifyjs,
+					input: _file,
+					output: _minName,
+					callback: function (e, m){}
+				});
+				break;
+			case "css":
+				minify({
+					compressor: cssnano,
 					input: _file,
 					output: _minName,
 					callback: function (e, m){}
