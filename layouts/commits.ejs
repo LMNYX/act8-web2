@@ -18,7 +18,7 @@
 		<div class="commit">
 			<div class="inside-commit">
 				<div class="commiter">
-					<img src="<%= commit.author.avatar_url == null ? "/imgs/default/no-avatar.jpg" : commit.author.avatar_url %>">
+					<img src="<%= commit.author.avatar_url === null || commit.author.avatar_url.match(/^ *$/) !== null ? "/imgs/default/no-avatar.jpg" : commit.author.avatar_url %>">
 					<span class="info"><a class="commiter" href="?filter=commiter:<%=commit.author.id%>"><%=commit.author.full_name%></a> in <a class="dir repo" href="?filter=repo:<%=commit.repository%>/*"><%=commit.repository%></a><span class="devider47"></span><a class="dir branch" href="?filter=repo:<%=commit.repository%>/<%=commit.branch%>"><%=commit.branch%></a><a class="changesetid" href="?">#<%=commit.changesetid%></a></span>
 				</div>
 				<div class="commit"><%~commit.commit_text.replace(/(?:\r\n|\r|\n)/g, "<br>")%></div>
