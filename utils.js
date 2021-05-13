@@ -17,7 +17,6 @@ const cssnano = require('@node-minify/cssnano');
 
 var _configRewriteNeeded = false;
 
-console.log("Checking essential roots of config..");
 for ( _rootKey in defaultConfig )
 {
 	if ( !( _rootKey in config ) )
@@ -42,7 +41,6 @@ for ( _rootKey in defaultConfig )
 
 if ( _configRewriteNeeded )
 	fs.writeFileSync(__dirname + "/config.json", JSON.stringify(config, null, 2));
-console.log("Config check is done!");
 
 /* config update end */
 
