@@ -64,5 +64,4 @@ fastify.setErrorHandler(routes.error);
 fastify.listen(config['http']['port'], async (err, address) => 
 {
 	if(err) throw err
-	fastify.log.info(`Listening on ${address}`)
 })
