@@ -18,8 +18,8 @@
 		<div class="commit">
 			<div class="inside-commit">
 				<div class="commiter">
-					<img src="/imgs/default/no-avatar.jpg">
-					<span class="info"><a class="commiter" href="?filter=commiter:"><%=commit.pusher_email%></a> in <a class="dir repo" href="?filter=repo:"><%=commit.repository%></a><span class="devider47"></span><a class="dir branch" href="?filter=repo:"><%=commit.branch%></a><a class="changesetid" href="?">#<%=commit.changesetid%></a></span>
+					<img src="<%= commit.author.avatar_url == null ? "/imgs/default/no-avatar.jpg" : commit.author.avatar_url %>">
+					<span class="info"><a class="commiter" href="?filter=commiter:<%=commit.author.id%>"><%=commit.author.full_name%></a> in <a class="dir repo" href="?filter=repo:<%=commit.repository%>/*"><%=commit.repository%></a><span class="devider47"></span><a class="dir branch" href="?filter=repo:<%=commit.repository%>/<%=commit.branch%>"><%=commit.branch%></a><a class="changesetid" href="?">#<%=commit.changesetid%></a></span>
 				</div>
 				<div class="commit"><%~commit.commit_text.replace(/(?:\r\n|\r|\n)/g, "<br>")%></div>
 				<div class="commit-time"><span><%=new Date(commit.push_time).toLocaleDateString('en-US')+" "+new Date(commit.push_time).toLocaleTimeString('en-US')%></span></div>
