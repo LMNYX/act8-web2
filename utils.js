@@ -326,6 +326,24 @@ Utils.getCommits = async function (_page, filterData)
 	return _commits.rows;
 }
 
+Utils.getEmployeeDataFromEmail = async function (_email)
+{
+	_user = await client.query(`SELECT id, full_name, avatar_url FROM employees WHERE email = $1::text;`, [_email]);
+	if(_user.rows.length < 1)
+		return {"full_name": `${_email.split('@')[0]}.unlinked`, 'id': -1, 'avatar_url': null};
+	else
+		return _user.rows[0];
+}
+
+Utils.MapEmailsToCommits = async function (_commits)
+{
+	for (let commit = 0; commit < _commits.length; commit++) {
+		const comObj = _commits[commit];
+		comObj['author'] = await this.getEmployeeDataFromEmail(comObj['pusher_email']);
+	}
+	return _commits;
+}
+
 Utils.PushCommitDB = async function (_d)
 {
 	_comm = await client.query("INSERT INTO commits (repository, push_time, changesetId, pusher_email, commit_text, branch) VALUES ($1, NOW(), $2, $3, $4, $5)", [ _d['repo'], _d['changesetId'], _d['pusher']['email'], await Utils.BuildCommitString(_d['commits']), _d['branch'] ]);
