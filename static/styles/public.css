@@ -965,6 +965,7 @@ h1.game-page.game-name
 }
 .commit-holder > .commit > .inside-commit
 {
+	display: block;
 	padding: 12px 24px;
 	word-wrap: break-word;
 }
@@ -976,4 +977,62 @@ h1.game-page.game-name
 		width: 219px;
 		height: 350px;
 	}
+}
+
+.inside-commit > .commiter
+{
+	/**/
+}
+.inside-commit > .commiter > img
+{
+	width: 32px;
+	height: 32px;
+	border-radius: 3px;
+	vertical-align: middle;
+}
+.inside-commit > .commiter > span.info
+{
+	vertical-align: middle;
+}
+.inside-commit > .commiter > span.info > a.commiter
+{
+	padding: 0 4px;
+	margin: 0 4px;
+	text-decoration: none;
+	transition: 0.2s;
+}
+.inside-commit > .commiter > span.info > a.commiter:hover
+{
+	background: var(--brand-white);
+}
+.inside-commit > .commiter > span.info > .changesetid
+{
+	font-weight: 1000;
+	color: var(--brand-white);
+}
+.inside-commit > .commiter > span.info > a.dir
+{
+	font-weight: 600;
+}
+.inside-commit > .commiter > span.info > a.dir:hover
+{
+	background: var(--brand-white);
+}
+.inside-commit > .commiter > span.info > a:not(.commiter)
+{
+	text-decoration: none;
+	transition: 0.2s;
+}
+.inside-commit > .commiter > span.info > a:not(.commiter):hover
+{
+	color: white;
+}
+.devider47:before
+{
+	content: '/';
+}
+.inside-commit > .commit
+{
+	/**/
+	margin-top: 4px;
 }
