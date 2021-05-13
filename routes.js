@@ -99,7 +99,7 @@ const Routes =
 			_pageID = commitsData.pages_max - 1;
 		
 		pageData = await utils.getCommits(_pageID);
-
+		pageData2 = await utils.MapEmailsToCommits(pageData);
 		return res.view(__dirname + "/layouts/commits.ejs",
 		{ 
 			"commitsData": commitsData,
