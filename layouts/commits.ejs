@@ -20,7 +20,10 @@
 <% }) %>
 </div>
 <br>
-<div class="paginator-holder"><div class="blogs-paginator"><a class="paginator-button" href="/commits/<%= parseInt(it.page) == 0 ? 0 : parseInt(it.page)-1 %>">&lt;</a> <%= parseInt(it.page)+1 %> &#47; <%= it.commitsData.pages_max %> <a href="/commits/<%= it.page >= it.commitsData.pages_max-1 ? it.page : parseInt(it.page)+1 %>" class="paginator-button">&gt;</a></div></div>
+<% if(it.commitsData.amount > 0) { %>
+	<div class="paginator-holder"><div class="blogs-paginator"><a class="paginator-button" href="/commits/<%= parseInt(it.page) == 0 ? 0 : parseInt(it.page)-1 %>">&lt;</a> <%= parseInt(it.page)+1 %> &#47; <%= it.commitsData.pages_max %> <a href="/commits/<%= it.page >= it.commitsData.pages_max-1 ? it.page : parseInt(it.page)+1 %>" class="paginator-button">&gt;</a></div></div>
+<% } %>
+
 <!--Footer-->
 <%~ includeFile('/layouts/presets/footer.ejs'); %>
 </body>
