@@ -132,7 +132,7 @@ Utils.GetLiteEmployee = async function (id) // get employee out of db by their i
 
 Utils.GetEmployees = async function () // get all employees
 {
-	employee = await client.query("SELECT id, full_name, avatar_url, gradient_1, gradient_2, resigned FROM employees;");
+	employee = await client.query("SELECT id, full_name, avatar_url, gradient_1, gradient_2, resigned FROM employees ORDER BY id DESC;");
 	return employee.rows;
 }
 
