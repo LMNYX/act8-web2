@@ -22,6 +22,7 @@
 					<span class="info"><a class="commiter" href="?filter=commiter:"><%=commit.pusher_email%></a> in <a class="dir repo" href="?filter=repo:"><%=commit.repository%></a><span class="devider47"></span><a class="dir branch" href="?filter=repo:"><%=commit.branch%></a><a class="changesetid" href="?">#<%=commit.changesetid%></a></span>
 				</div>
 				<div class="commit"><%=commit.commit_text%></div>
+				<div class="commit-time"><span><%=new Date(commit.push_time).toLocaleDateString('en-US')+" "+new Date(commit.push_time).toLocaleTimeString('en-US')%></span></div>
 			</div>
 		</div>
 <% }) %>

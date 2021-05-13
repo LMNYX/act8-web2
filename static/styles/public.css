@@ -1034,5 +1034,15 @@ h1.game-page.game-name
 .inside-commit > .commit
 {
 	/**/
+	margin-top: 8px;
+}
+.inside-commit > .commit-time
+{
 	margin-top: 4px;
+	width: 100%;
+	height: 32px;
+}
+.inside-commit > .commit-time > span
+{
+	float: right;
 }
