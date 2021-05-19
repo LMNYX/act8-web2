@@ -86,9 +86,9 @@ class Commits
     }
 }
 
-function CommitClassCreation(client)
+function ClassCreation(client)
 {
     return new Commits(client);
 }
 
-module.exports = CommitClassCreation;
+module.exports = ClassCreation;
