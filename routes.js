@@ -118,7 +118,7 @@ const Routes =
 				res.send("");
 		else
 		{
-			_av = await utils.ProcessAvatar(_res.avatar_url);
+			_av = await utils.Processors.ProcessAvatar(_res.avatar_url);
 			res.sendFile(_av);
 		}
 	},
@@ -132,7 +132,7 @@ const Routes =
 			res.send("");
 		else
 		{
-			_av = await utils.ProcessPoster(_res.poster_logo);
+			_av = await utils.Processors.ProcessPoster(_res.poster_logo);
 			res.sendFile(_av['100px'] == null ? _av : _av['100px']);
 		}
 	},

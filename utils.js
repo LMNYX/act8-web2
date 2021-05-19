@@ -242,24 +242,6 @@ Utils.getLatestGames = async function ()
 
 }
 
-Utils.ProcessAvatar = async function (id)
-{
-	if(fs.existsSync(path.join(__dirname, "static", "imgs", "avatars", id+".jpg")) && fs.existsSync(path.join(__dirname, "static", "imgs", "avatars", id+"_100.jpg")))
-		return {"full": "/imgs/avatars/"+id+".jpg", "100px": "/imgs/avatars/"+id+"_100.jpg"}
-	else
-		if(new Date().getDate()+"."+(new Date().getMonth()+1) == "21.6")
-			return "/imgs/default/droid.jpg";
-		else
-			return "/imgs/default/no-avatar.jpg";
-}
-Utils.ProcessPoster = async function (id)
-{
-	if(fs.existsSync(path.join(__dirname, "static", "imgs", "games", id+".jpg")) && fs.existsSync(path.join(__dirname, "static", "imgs", "games", id+"_100.jpg")))
-		return {"full": "/imgs/games/"+id+".jpg", "100px": "/imgs/games/"+id+"_100.jpg"}
-	else
-		return "/imgs/default/no-poster.jpg";
-}
-
 Utils.Execute = async function (shell_command)
 {
 	exec(shell_command, (e, stdout, stderr) =>
@@ -349,5 +331,7 @@ Utils.PushCommitDB = async function (_d)
 	_comm = await client.query("INSERT INTO commits (repository, push_time, changesetId, pusher_email, commit_text, branch) VALUES ($1, NOW(), $2, $3, $4, $5)", [ _d['repo'], _d['changesetId'], _d['pusher']['email'], await Utils.BuildCommitString(_d['commits']), _d['branch'] ]);
 	return;
 }
+
+Utils.Processors = require(`${__dirname}/utils/processors.js`);
 
 module.exports = Utils;
