@@ -1,13 +1,15 @@
+/*-----*
+
+utils.js
+Summary: Main manager of all utils, registerer.
+
+*-----*/
 const path = require('path');
+const { UtilBase } = require(`${__dirname}/base.js`);
 __dirname = path.dirname(require.main.filename);
 
-class Utils
+class Utils extends UtilBase
 {
-    constructor(client)
-    {
-        this.client = client;
-    }
-
     Require(util_name)
     {
         return require(`${__dirname}/utils/${util_name}.js`)(this.client);

@@ -4,13 +4,9 @@ commits.js
 Summary: Connection between client and server of Git commits
 
 *-----*/
-class Commits
+const { UtilBase } = require(`${__dirname}/base.js`);
+class Commits extends UtilBase
 {
-    constructor (client)
-    {
-        this.client = client;
-    }
-
     async Filter (_raw)
     {
         await _raw.forEach(async (p, i, a)=>{

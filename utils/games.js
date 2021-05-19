@@ -4,13 +4,10 @@ games.js
 Summary: Connection between client and database table of Games
 
 *-----*/
-class Games
-{
-    constructor(client)
-    {
-        this.client = client;
-    }
+const { UtilBase } = require(`${__dirname}/base.js`);
 
+class Games extends UtilBase
+{
     async GetLatest ()
     {
         let _games = await this.client.query('SELECT id, poster_logo, name FROM games ORDER BY id DESC FETCH NEXT 3 ROWS ONLY');

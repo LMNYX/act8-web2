@@ -6,13 +6,11 @@ Summary: File and other data processors
 *-----*/
 const fs = require('fs');
 const path = require('path');
+const { UtilBase } = require(`${__dirname}/base.js`);
 __dirname = path.dirname(require.main.filename);
 
-class Processors
+class Processors extends UtilBase
 {
-	constructor()
-	{}
-
 	async ProcessAvatar (id)
 	{
 		if(fs.existsSync(path.join(__dirname, "static", "imgs", "avatars", id+".jpg")) && fs.existsSync(path.join(__dirname, "static", "imgs", "avatars", id+"_100.jpg")))
