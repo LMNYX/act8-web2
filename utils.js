@@ -157,18 +157,6 @@ Utils.getEmployeeList = async function()
 	return _empReturn;
 }
 
-Utils.GetGames = async function () // get all games
-{
-	game = await client.query("SELECT id, name, poster_logo FROM games ORDER BY id DESC;");
-	return game.rows;
-}
-
-Utils.GetGame = async function (id) // get game by its id from db
-{
-	game = await client.query("SELECT * FROM games WHERE id = $1::integer;", [id]);
-	return game.rows[0];
-}
-
 Utils.MapAuthor = async function (blogposts)
 {
 	for (var i = blogposts.length - 1; i >= 0; i--) {
@@ -234,13 +222,7 @@ Utils.getSocialType = function (soc)
 		return _n;
 }
 
-Utils.getLatestGames = async function ()
-{
 
-	_games = await client.query('SELECT id, poster_logo, name FROM games ORDER BY id DESC FETCH NEXT 3 ROWS ONLY');
-	return _games.rows;
-
-}
 
 Utils.Execute = async function (shell_command)
 {
@@ -259,7 +241,7 @@ Utils.Execute = async function (shell_command)
 		console.log(stdout);
 	});
 }
-
+Utils.Games = require(`${__dirname}/utils/games.js`)(client);
 Utils.Commits = require(`${__dirname}/utils/commits.js`)(client);
 Utils.Processors = require(`${__dirname}/utils/processors.js`);
 

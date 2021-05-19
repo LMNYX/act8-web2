@@ -7,7 +7,7 @@ const Routes =
 	"home": async (req,res)=>
 	{
 		res.type("text/html").code(200);
-		_latestGames = await utils.getLatestGames();
+		_latestGames = await utils.Games.GetLatest();
 		return res.view(__dirname+"/layouts/home.ejs", {"latestGames": _latestGames});
 	},
 
@@ -46,7 +46,7 @@ const Routes =
 	"games": async (req, res)=>
 	{
 		res.type("text/html").code(200);
-		_games = await utils.GetGames();
+		_games = await utils.Games.GetAll();
 		return res.view(__dirname+"/layouts/games.ejs", { "games": _games });
 	},
 	"bloglisting": async (req, res)=>
@@ -69,7 +69,7 @@ const Routes =
 	"game": async ( req, res ) =>
 	{
 		res.type("text/html").code(200);
-		_game = await utils.GetGame(req.params.game_id);
+		_game = await utils.Games.Get(req.params.game_id);
 		return res.view(__dirname + "/layouts/game.ejs", {"game": _game});
 	},
 	"devpage": async (req, res)=>
@@ -127,7 +127,7 @@ const Routes =
 	{
 		res.type("image/jpeg").code(200);
 		req.params.game = parseInt(req.params.game);
-		_res = await utils.GetGame(req.params.game);
+		_res = await utils.Games.Get(req.params.game);
 		if(_res == undefined)
 			res.send("");
 		else

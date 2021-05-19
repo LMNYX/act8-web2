@@ -1,7 +1,7 @@
 /*-----*
 
 processors.js
-Summary: Processing data into file paths.
+Summary: File and other data processors
 
 *-----*/
 const fs = require('fs');
