@@ -201,6 +201,7 @@ Utils.Execute = async function (shell_command)
 /* new style  */
 Utils.Games = UtilMgr.Require('games');
 Utils.Commits = UtilMgr.Require('commits');
-Utils.Processors = UtilMgr.Require('processors');;
+Utils.Blog = UtilMgr.Require('blog');
+Utils.Processors = UtilMgr.Require('processors');
 
 module.exports = Utils;

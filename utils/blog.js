@@ -1,3 +1,13 @@
+const path = require('path');
+const { UtilBase } = require(`${__dirname}/base.js`);
+__dirname = path.dirname(require.main.filename);
+
+class Blog extends UtilBase
+{
+
+}
+
+/*
 
 Utils.GetBlog = async function (_pageID) // get full blog
 {
@@ -41,3 +51,11 @@ Utils.GetBlogData = async function()
 	return {"posts": blogs.rows[0]['count'], "pages_max": Math.floor(blogs.rows[0]["count"]/5), "pages_min": 0};
 
 }
+*/
+
+function ClassCreation(client)
+{
+    return new Blog(client);
+}
+
+module.exports = ClassCreation;
