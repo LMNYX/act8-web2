@@ -15,7 +15,6 @@ class Processors
 
 	async ProcessAvatar (id)
 	{
-		console.log(__dirname);
 		if(fs.existsSync(path.join(__dirname, "static", "imgs", "avatars", id+".jpg")) && fs.existsSync(path.join(__dirname, "static", "imgs", "avatars", id+"_100.jpg")))
 			return {"full": "/imgs/avatars/"+id+".jpg", "100px": "/imgs/avatars/"+id+"_100.jpg"}
 		else
