@@ -86,8 +86,8 @@ const Routes =
 			_pageID = 0;
 		else
 			_pageID = req.params.page_id;
-		
-		commitsData = await utils.GetCommitsData();
+		commitsData = await utils.Commits.GetData();
+
 		if(_pageID < 0)
 		{ //Fucking idiots
 			res.type('you_are_not_supposed_to/be_here/////////get_away/you_are_making-things_way_worse--please_get-lost').code(200);
@@ -95,11 +95,11 @@ const Routes =
 			res.send(`You think you're smart, huh?`);
 			return;
 		}
+		
 		if(commitsData.pages_max-1 < _pageID)
 			_pageID = commitsData.pages_max - 1;
-		
-		pageData = await utils.getCommits(_pageID);
-		pageData2 = await utils.MapEmailsToCommits(pageData);
+		pageData = await utils.Commits.Get(_pageID);
+		pageData2 = await utils.Commits.MapEmails(pageData);
 		return res.view(__dirname + "/layouts/commits.ejs",
 		{ 
 			"commitsData": commitsData,
@@ -154,9 +154,9 @@ const Routes =
 			res.send("{\"result\": \"denied\"}");
 			return;
 		}
-		_gitData = await utils.BuildGitData(req.body);
+		_gitData = await utils.Commits.BuildGitData(req.body);
 
-		await utils.PushCommitDB(_gitData);
+		await utils.Commits.PushDB(_gitData);
 		res.send("{\"result\": \"ok\"}");
 	}
 };
