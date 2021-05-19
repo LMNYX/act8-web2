@@ -47,6 +47,7 @@ if ( _configRewriteNeeded )
 client.connect()
 .catch((e)=>{ console.log(e); });
 
+const UtilMgr = require(`${__dirname}/utils/utils.js`)(client);
 var Utils = {};
 
 // Var
@@ -243,8 +244,8 @@ Utils.Execute = async function (shell_command)
 }
 
 /* new style  */
-Utils.Games = require(`${__dirname}/utils/games.js`)(client);
-Utils.Commits = require(`${__dirname}/utils/commits.js`)(client);
-Utils.Processors = require(`${__dirname}/utils/processors.js`)(client);
+Utils.Games = UtilMgr.Require('games');
+Utils.Commits = UtilMgr.Require('commits');
+Utils.Processors = UtilMgr.Require('processors');;
 
 module.exports = Utils;
