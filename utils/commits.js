@@ -1,4 +1,9 @@
+/*-----*
 
+commits.js
+Summary: Connection between client and server of Git commits
+
+*-----*/
 class Commits
 {
     constructor (client)
