@@ -243,6 +243,6 @@ Utils.Execute = async function (shell_command)
 }
 Utils.Games = require(`${__dirname}/utils/games.js`)(client);
 Utils.Commits = require(`${__dirname}/utils/commits.js`)(client);
-Utils.Processors = require(`${__dirname}/utils/processors.js`);
+Utils.Processors = require(`${__dirname}/utils/processors.js`)(client);
 
 module.exports = Utils;
