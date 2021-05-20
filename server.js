@@ -48,9 +48,6 @@ fastify.get('/game/:game_id', routes.game);
 fastify.get('/avatar/:user', routes.avatarprocessor);
 fastify.get('/poster/:game', routes.posterprocessor);
 
-fastify.get('/commits', routes.commits);
-fastify.get('/commits/:page_id', routes.commits);
-
 /* GitHub */
 fastify.post('/git-commit-listener', routes.gitCommitListener);
 fastify.post('/git-commit-accepter', routes.githubCommitAccepter);
