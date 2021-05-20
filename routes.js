@@ -1,6 +1,6 @@
 const utils = require(__dirname + "/utils.js");
 
-utils.GenerateMinification();
+utils.Minify.GenerateMinification(utils.ToMinify);
 
 const Routes =
 {	
@@ -40,7 +40,7 @@ const Routes =
 	"team": async (req, res)=>
 	{
 		res.type("text/html").code(200);
-		employees = await utils.getEmployeeList(); // storing current employees
+		employees = await utils.Employees.GetList(); // storing current employees
 		return res.view(__dirname+"/layouts/team.ejs", {"employees": employees['working'], "resigned": employees['resigned']});
 	},
 	"games": async (req, res)=>
@@ -56,14 +56,14 @@ const Routes =
 			_pageID = 0;
 		else
 			_pageID = req.params.page_id;
-		_blog = await utils.GetBlog(_pageID);
-		_blogData = await utils.GetBlogData();
+		_blog = await utils.Blog.GetPage(_pageID);
+		_blogData = await utils.Blog.GetData();
 		return res.view(__dirname+"/layouts/blog.ejs", { "posts": _blog, "page": parseInt(_pageID)+1, "blogData": _blogData });
 	},
 	"blogpost": async (req, res)=>
 	{
 		res.type("text/html").code(200);
-		_blog = await utils.GetBlogPost(req.params.post_id);
+		_blog = await utils.Blog.GetPost(req.params.post_id);
 		return res.view(__dirname+"/layouts/blogpost.ejs", { "postData": _blog });
 	},
 	"game": async ( req, res ) =>
@@ -75,8 +75,8 @@ const Routes =
 	"devpage": async (req, res)=>
 	{
 		res.type("text/html").code(200);
-		_employee = await utils.GetEmployee(req.params.dev_id);
-		return res.view(__dirname+"/layouts/devpage.ejs", { "devData": _employee, "getSocialType": utils.getSocialType});
+		_employee = await utils.Employees.Get(req.params.dev_id);
+		return res.view(__dirname+"/layouts/devpage.ejs", { "devData": _employee, "getSocialType": utils.Misc.getSocialType});
 	},
 	
 	"commits": async (req, res) =>
@@ -113,7 +113,7 @@ const Routes =
 	{
 		res.type("image/jpeg").code(200);
 		req.params.user = parseInt(req.params.user);
-		_res = await utils.GetEmployee(req.params.user);
+		_res = await utils.Employees.Get(req.params.user);
 		if(_res == undefined)
 				res.send("");
 		else
@@ -141,7 +141,7 @@ const Routes =
 	{
 		res.type("application/json").code(200);
 
-		await utils.Execute("cd "+__dirname+" && git reset --hard && git pull origin indev && service "+`${utils.serviceName} restart`);
+		await utils.Misc.Execute("cd "+__dirname+" && git reset --hard && git pull origin indev && service "+`${utils.serviceName} restart`);
 		res.send("{\"result\": \"ok\"}");
 	},
 	"githubCommitAccepter": async (req, res)=>
