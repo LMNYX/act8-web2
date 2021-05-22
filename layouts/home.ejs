@@ -8,12 +8,16 @@
 
 <body>
 <!--NavBar-->
-<%~ includeFile('/layouts/presets/navbar.ejs'); %>
 <!--Body-->
 <div class="body">
-	<div class="mainh"><h1>Indie game development studio,</h1>
-	<h1>located somewhere in Russia.</h1>
-	<h2>We make games.</h2></div>
+	<div class="bodynavbarholder"><%~ includeFile('/layouts/presets/navbar.ejs'); %></div>
+	<div class="insidebody">
+		<div class="bodyinside">
+			<div class="mainh"><h1>Indie game development studio,</h1>
+				<h1>located somewhere in Russia.</h1>
+				<h2>We make games.</h2></div>
+		</div>
+	</div>
 </div>
 <div class="_1block gameholder">
 	<h1>Our Latest Games</h1>
